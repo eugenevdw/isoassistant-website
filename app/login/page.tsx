@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Container } from "../components/layout/Container";
+import { siteConfig } from "../lib/site";
 
 export const dynamic = "force-static";
 
@@ -18,8 +19,11 @@ export default function LoginPage() {
         >
           Go to app login
         </a>
+        <a href={siteConfig.signupUrl} className="text-sm font-semibold text-ink">
+          New here? Start a 30-day free trial
+        </a>
         <Link href="/contact" className="text-sm font-semibold text-ink">
-          Need access? Contact us
+          Need help deciding fit? Contact us
         </Link>
       </section>
     </Container>

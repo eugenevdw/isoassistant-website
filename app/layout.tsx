@@ -18,9 +18,9 @@ const body = Source_Sans_3({
 });
 
 export const metadata: Metadata = {
-  title: "ISO Assistant | Compliance without the chaos",
+  title: "ISO Assistant | Practical ISO Management For SMEs",
   description:
-    "ISO Assistant keeps ISO 9001 evidence organized, audit-ready, and easy to share."
+    "ISO Assistant helps SMEs run document control, audits, actions, risks, reviews, training, and records in one place. Strongest for ISO 9001, with expanding support for ISO 13485, ISO 14001, and ISO 45001."
 };
 
 export default function RootLayout({

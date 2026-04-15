@@ -1,39 +1,38 @@
 import Link from "next/link";
 import { Container } from "../components/layout/Container";
+import { siteConfig } from "../lib/site";
 
 export const dynamic = "force-static";
 
 const tiers = [
   {
-    name: "Starter",
-    price: "$0",
-    description: "For teams getting their first quality system organized.",
+    name: "30-day free trial",
+    price: "R0",
+    description: "Start your trial with only your email address.",
     features: [
-      "Up to 5 active procedures",
-      "Shared evidence vault",
-      "Email support"
+      "30 days to explore the platform",
+      "Simple sign-up path",
+      "Focused on getting SMEs started quickly"
     ]
   },
   {
-    name: "Growth",
-    price: "$449",
-    description: "For scaling teams preparing for their next ISO audit.",
+    name: "Standard",
+    price: siteConfig.pricing.standardMonthly,
+    description: siteConfig.pricing.standardDetails,
     features: [
-      "Unlimited procedures and records",
-      "Audit pack builder",
-      "Review automation",
-      "Priority support"
+      "Controlled documents and records",
+      "Actions, audits, risks, reviews, and registers",
+      "Roles, permissions, notifications, and dashboards"
     ]
   },
   {
-    name: "Enterprise",
-    price: "Custom",
-    description: "For multi-site operations with complex compliance needs.",
+    name: "Extra seats",
+    price: siteConfig.pricing.extraSeatMonthly,
+    description: siteConfig.pricing.extraSeatDetails,
     features: [
-      "Multi-site governance",
-      "Dedicated success manager",
-      "Custom integrations",
-      "On-site audit support"
+      "Add seats as your team grows",
+      "Suitable for owners, managers, consultants, and representatives",
+      "Talk to us if you need help deciding fit"
     ]
   }
 ];
@@ -44,10 +43,11 @@ export default function PricingPage() {
       <section className="space-y-5">
         <span className="tag">Pricing</span>
         <h1 className="text-4xl font-semibold tracking-tight text-ink md:text-5xl">
-          Straightforward plans for ISO-ready teams.
+          Simple pricing for small and mid-sized teams.
         </h1>
         <p className="max-w-2xl text-lg text-slate">
-          Start with a free trial, then choose the plan that matches your compliance cadence.
+          Start with a 30-day free trial, then move to a straightforward monthly plan with five
+          seats included.
         </p>
       </section>
 
@@ -66,28 +66,29 @@ export default function PricingPage() {
                 <li key={feature}>{feature}</li>
               ))}
             </ul>
-            <Link
-              href="/contact"
+            <a
+              href={siteConfig.signupUrl}
               className="mt-8 inline-flex items-center justify-center rounded-full bg-ink px-6 py-3 text-sm font-semibold text-white shadow-glow transition hover:-translate-y-0.5"
             >
-              Start free trial
-            </Link>
+              Start 30-day free trial
+            </a>
           </div>
         ))}
       </section>
 
       <section className="card flex flex-col items-start gap-6 md:flex-row md:items-center md:justify-between">
         <div>
-          <h2 className="text-2xl font-semibold text-ink">Need a custom compliance roadmap?</h2>
+          <h2 className="text-2xl font-semibold text-ink">Need help deciding if it fits?</h2>
           <p className="mt-2 text-sm text-slate">
-            Our team will align ISO Assistant to your facilities, processes, and audit calendar.
+            We can help you assess whether ISO Assistant matches your current management system and
+            standard requirements.
           </p>
         </div>
         <Link
           href="/contact"
           className="rounded-full border border-ink/10 bg-white px-6 py-3 text-sm font-semibold text-ink transition hover:-translate-y-0.5"
         >
-          Talk to sales
+          Contact us
         </Link>
       </section>
     </Container>

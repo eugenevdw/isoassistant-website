@@ -1,12 +1,13 @@
 import Link from "next/link";
 import { Container } from "../components/layout/Container";
+import { siteConfig } from "../lib/site";
 
 export const dynamic = "force-static";
 
 const bullets = [
-  "Tell us your industry and audit timeline",
-  "We map your procedures to ISO clauses",
-  "Get a tailored readiness plan within 48 hours"
+  "Go to the signup page",
+  "Create your account with your email address",
+  "Start exploring the platform during your 30-day trial"
 ];
 
 export default function ContactPage() {
@@ -15,27 +16,29 @@ export default function ContactPage() {
       <section className="space-y-5">
         <span className="tag">Contact</span>
         <h1 className="text-4xl font-semibold tracking-tight text-ink md:text-5xl">
-          Talk with our compliance team.
+          Start your 30-day free trial.
         </h1>
         <p className="max-w-2xl text-lg text-slate">
-          Start your free trial or request a guided demo. We respond within one business day.
+          ISO Assistant is set up for a simple start. Only your email address is required to begin
+          the trial.
         </p>
       </section>
 
       <section className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
         <div className="card space-y-4">
-          <h2 className="text-2xl font-semibold text-ink">Start a conversation</h2>
+          <h2 className="text-2xl font-semibold text-ink">Start online</h2>
           <p className="text-sm text-slate">
-            For now, email us directly and we will send a secure onboarding form.
+            You can start your free trial directly online. If you need help deciding fit, you can
+            still contact us by email or phone.
           </p>
           <a
             className="inline-flex items-center justify-center rounded-full bg-ink px-6 py-3 text-sm font-semibold text-white shadow-glow transition hover:-translate-y-0.5"
-            href="mailto:hello@isoassistant.com?subject=ISO%20Assistant%20demo%20request"
+            href={siteConfig.signupUrl}
           >
-            Email hello@isoassistant.com
+            Start 30-day free trial
           </a>
           <div className="rounded-2xl border border-dashed border-ink/20 p-4 text-sm text-slate">
-            <p className="font-semibold text-ink">What to include</p>
+            <p className="font-semibold text-ink">How the trial starts</p>
             <ul className="mt-3 space-y-2">
               {bullets.map((item) => (
                 <li key={item}>{item}</li>
@@ -44,24 +47,36 @@ export default function ContactPage() {
           </div>
         </div>
         <div className="card space-y-4">
-          <h3 className="text-lg font-semibold text-ink">Prefer self-serve?</h3>
+          <h3 className="text-lg font-semibold text-ink">Contact details</h3>
           <p className="text-sm text-slate">
-            Start your trial and invite stakeholders. We will configure your clause map and
-            audit dashboard right away.
+            Reach out if you want to discuss pricing, standard fit, or how the platform works for
+            your team.
           </p>
           <div className="space-y-3 text-sm text-slate">
             <p>
-              Response time: <span className="font-semibold text-ink">under 24 hours</span>
+              Email:{" "}
+              <a className="font-semibold text-ink" href={`mailto:${siteConfig.email}`}>
+                {siteConfig.email}
+              </a>
             </p>
             <p>
-              Office hours: <span className="font-semibold text-ink">Mon–Fri, 9am–6pm PT</span>
+              Tel:{" "}
+              <a className="font-semibold text-ink" href={siteConfig.phoneHref}>
+                {siteConfig.phoneDisplay}
+              </a>
+            </p>
+            <p>
+              Pricing:{" "}
+              <span className="font-semibold text-ink">
+                {siteConfig.pricing.standardMonthly} for 5 seats
+              </span>
             </p>
           </div>
           <Link
             href="/pricing"
             className="inline-flex items-center text-sm font-semibold text-ink"
           >
-            See pricing
+            View pricing
           </Link>
         </div>
       </section>

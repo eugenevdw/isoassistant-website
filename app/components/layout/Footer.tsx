@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Container } from "./Container";
+import { siteConfig } from "../../lib/site";
 
 export function Footer() {
   return (
@@ -8,8 +9,8 @@ export function Footer() {
         <div className="space-y-4">
           <p className="text-lg font-semibold text-ink">ISO Assistant</p>
           <p className="text-sm text-slate">
-            The compliance workspace that keeps ISO 9001 evidence organized, audit-ready,
-            and easy to share.
+            Practical ISO management software for SMEs. Strongest for ISO 9001, with expanding
+            support for ISO 13485, ISO 14001, and ISO 45001 through shared workflows.
           </p>
           <p className="text-xs text-slate">© 2026 ISO Assistant. All rights reserved.</p>
         </div>
@@ -28,14 +29,14 @@ export function Footer() {
         <div className="space-y-3 text-sm text-slate">
           <p className="text-xs font-semibold uppercase tracking-[0.25em] text-ink">Contact</p>
           <Link href="/contact" className="block transition hover:text-ink">
-            Request a demo
+            Start free trial
           </Link>
-          <a className="block transition hover:text-ink" href="mailto:hello@isoassistant.com">
-            hello@isoassistant.com
+          <a className="block transition hover:text-ink" href={`mailto:${siteConfig.email}`}>
+            {siteConfig.email}
           </a>
-          <p className="text-xs text-slate">
-            548 Mission St, Suite 220, San Francisco, CA
-          </p>
+          <a className="block transition hover:text-ink" href={siteConfig.phoneHref}>
+            {siteConfig.phoneDisplay}
+          </a>
         </div>
       </Container>
     </footer>

@@ -1,33 +1,39 @@
 import Link from "next/link";
 import { Container } from "../components/layout/Container";
+import { siteConfig } from "../lib/site";
 
 export const dynamic = "force-static";
 
 const faqs = [
   {
-    question: "Is ISO Assistant only for ISO 9001?",
+    question: "Which ISO standards does ISO Assistant support?",
     answer:
-      "ISO 9001 is our primary focus today, but the framework also supports ISO 13485 and ISO 27001 evidence mapping."
+      "ISO 9001 is the strongest and most mature part of the platform today. ISO 13485 is partly supported where the quality system closely follows ISO 9001. ISO 14001 and ISO 45001 are supported through shared workflows, but they are not yet as mature or complete as ISO 9001 in the platform."
   },
   {
-    question: "How fast can we be audit-ready?",
+    question: "Who is ISO Assistant built for?",
     answer:
-      "Most teams see a complete evidence map within two weeks. We provide templates and onboarding to accelerate set up."
+      "ISO Assistant is built for SMEs, especially in services, IT, engineering, manufacturing, and medical-device-related businesses. Typical users include owners, quality managers, compliance managers, HSE managers, operations managers, consultants, and management representatives."
   },
   {
-    question: "Do we need to migrate every historical document?",
+    question: "What can we manage in the platform?",
     answer:
-      "No. You can start with active procedures and bring legacy evidence over as needed."
+      "You can manage controlled documents, incidents, NCRs, risks and opportunities, objectives, internal audits, management reviews, training records, suppliers, maintenance, calibration, customer feedback, company details, and related actions in one place."
   },
   {
-    question: "Can external auditors access evidence?",
+    question: "How does the free trial work?",
     answer:
-      "Yes. Create auditor-only links or export audit packs with locked PDFs."
+      "ISO Assistant offers a 30-day free trial. Only your email address is required to sign up."
   },
   {
-    question: "What support is included?",
+    question: "What does pricing look like after the trial?",
     answer:
-      "Every plan includes email support, onboarding guidance, and access to our ISO compliance library."
+      `The standard account is ${siteConfig.pricing.standardMonthly} for 5 seats. Extra seats are ${siteConfig.pricing.extraSeatMonthly} per seat, per month.`
+  },
+  {
+    question: "Does ISO Assistant guarantee certification or connect directly to certification bodies?",
+    answer:
+      "No. ISO Assistant helps you run the day-to-day operation of your management system, but it does not guarantee certification, automate the full certification process end to end, or integrate directly with certification bodies."
   }
 ];
 
@@ -37,10 +43,11 @@ export default function FAQPage() {
       <section className="space-y-5">
         <span className="tag">FAQ</span>
         <h1 className="text-4xl font-semibold tracking-tight text-ink md:text-5xl">
-          Answers for quality teams.
+          Straight answers for SMEs.
         </h1>
         <p className="max-w-2xl text-lg text-slate">
-          Questions about ISO Assistant? We gathered the most common ones here.
+          Questions about ISO Assistant? Here are the main points on standards support, fit, trial,
+          and pricing.
         </p>
       </section>
 
@@ -64,7 +71,7 @@ export default function FAQPage() {
           href="/contact"
           className="rounded-full bg-ink px-6 py-3 text-sm font-semibold text-white shadow-glow transition hover:-translate-y-0.5"
         >
-          Contact us
+          Start free trial
         </Link>
       </section>
     </Container>

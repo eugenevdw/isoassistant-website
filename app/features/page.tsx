@@ -1,46 +1,47 @@
 import Link from "next/link";
 import { Container } from "../components/layout/Container";
+import { siteConfig } from "../lib/site";
 
 export const dynamic = "force-static";
 
 const features = [
   {
-    title: "Clause-aligned workspace",
+    title: "Controlled document management",
     description:
-      "Map every requirement to owned procedures, evidence, and corrective actions."
+      "Create and manage SOPs and work instructions with rich text editing, numbering, revision control, approvals, and PDF export."
   },
   {
-    title: "Audit pack builder",
+    title: "Approvals and change requests",
     description:
-      "Generate exportable audit packages with versioned documents and proof trails."
+      "Use draft, submit for approval, request changes, and approve workflows to keep controlled documents current."
   },
   {
-    title: "Policy review automation",
+    title: "Incidents and NCRs",
     description:
-      "Track expiration dates, reviewers, and approvals so nothing slips past due."
+      "Manage incidents, nonconformities, and related actions in one place with clear follow-up."
   },
   {
-    title: "Training and competence records",
+    title: "Audits and management reviews",
     description:
-      "Link training completion to procedures and roles for instant traceability."
+      "Run internal audits, capture management review minutes, and track resulting actions through to completion."
   },
   {
-    title: "Risk and opportunity tracking",
+    title: "Operational registers",
     description:
-      "Surface mitigations, owners, and next review windows in one view."
+      "Maintain risks and opportunities, objectives, training, suppliers, maintenance, calibration, and customer feedback records."
   },
   {
-    title: "Actionable dashboards",
+    title: "Roles, notifications, and dashboards",
     description:
-      "Stay ahead of audits with status signals tailored to leadership and operators."
+      "Use role-based permissions, email notifications, and dashboard views for activity and overdue items."
   }
 ];
 
 const integrations = [
-  "Upload from Google Drive or SharePoint",
-  "Secure auditor-only access links",
-  "CSV exports for legacy systems",
-  "Role-based approvals and sign-offs"
+  "Strongest fit today for ISO 9001",
+  "Partial support for ISO 13485 where workflows align closely with ISO 9001",
+  "Shared workflow support for ISO 14001 and ISO 45001",
+  "Practical fit for SMEs rather than complex enterprise rollouts"
 ];
 
 export default function FeaturesPage() {
@@ -49,19 +50,19 @@ export default function FeaturesPage() {
       <section className="space-y-5">
         <span className="tag">Features</span>
         <h1 className="text-4xl font-semibold tracking-tight text-ink md:text-5xl">
-          Every ISO requirement, operationalized.
+          Practical tools for running an ISO management system.
         </h1>
         <p className="max-w-2xl text-lg text-slate">
-          ISO Assistant gives quality teams the structure of a compliance platform with the
-          flexibility of modern collaboration.
+          ISO Assistant helps SMEs manage the day-to-day work behind documents, records, actions,
+          audits, risks, reviews, training, and related operational workflows.
         </p>
         <div className="flex flex-wrap gap-4">
-          <Link
-            href="/contact"
+          <a
+            href={siteConfig.signupUrl}
             className="rounded-full bg-ink px-6 py-3 text-sm font-semibold text-white shadow-glow transition hover:-translate-y-0.5"
           >
-            Start free trial
-          </Link>
+            Start 30-day free trial
+          </a>
           <Link
             href="/pricing"
             className="rounded-full border border-ink/10 bg-white px-6 py-3 text-sm font-semibold text-ink transition hover:-translate-y-0.5"
@@ -83,18 +84,20 @@ export default function FeaturesPage() {
       <section className="card grid gap-6 md:grid-cols-[1.1fr_0.9fr]">
         <div className="space-y-3">
           <p className="text-xs font-semibold uppercase tracking-[0.25em] text-slate">
-            Built for audits
+            Standards fit
           </p>
           <h2 className="text-2xl font-semibold text-ink">
-            Designed to share evidence confidently.
+            Accurate support, without overclaiming.
           </h2>
           <p className="text-sm text-slate">
-            From internal reviews to registrar audits, ISO Assistant keeps every document and
-            action traceable, so your evidence stands up to scrutiny.
+            ISO Assistant is strongest for ISO 9001 today. ISO 13485 is partly supported where the
+            quality system closely matches ISO 9001, while ISO 14001 and ISO 45001 are supported
+            through shared workflows for documents, actions, audits, risks, reviews, training, and
+            operational records.
           </p>
         </div>
         <div className="rounded-2xl border border-dashed border-ink/20 p-5 text-sm text-slate">
-          <p className="font-semibold text-ink">Quick wins</p>
+          <p className="font-semibold text-ink">Where it fits best</p>
           <ul className="mt-3 space-y-2">
             {integrations.map((item) => (
               <li key={item}>{item}</li>

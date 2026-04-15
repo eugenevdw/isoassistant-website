@@ -1,44 +1,48 @@
 import Link from "next/link";
 import { Container } from "./components/layout/Container";
+import { siteConfig } from "./lib/site";
 
 export const dynamic = "force-static";
 
 const metrics = [
-  { label: "Audit evidence located", value: "3x faster" },
-  { label: "Time saved on updates", value: "25+ hrs/quarter" },
-  { label: "Documents with clear ownership", value: "100%" }
+  { label: "Strongest standard support today", value: "ISO 9001" },
+  { label: "Free trial", value: "30 days" },
+  { label: "Standard account", value: "5 seats included" }
 ];
 
 const pillars = [
   {
-    title: "Evidence in one living workspace",
+    title: "Control documents properly",
     description:
-      "Centralize SOPs, logs, and corrective actions with version history and clear ownership."
+      "Manage SOPs and work instructions with numbering, revision control, approvals, and PDF export."
   },
   {
-    title: "Readiness at a glance",
+    title: "Run daily ISO workflows in one place",
     description:
-      "Dashboards show what is current, what is overdue, and what will be reviewed next."
+      "Track actions, audits, risks, reviews, training, suppliers, maintenance, calibration, and customer feedback together."
   },
   {
-    title: "Audit narratives, auto-assembled",
+    title: "Stay on top of work that matters",
     description:
-      "Generate audit-ready narratives and exportable packets for your registrar."
+      "Use dashboards, overdue views, email notifications, and role-based permissions to keep work moving."
   }
 ];
 
 const workflow = [
   {
-    title: "Plan",
-    description: "Track objectives, risks, and procedures in a structured system of record."
+    title: "Control documents",
+    description:
+      "Create, review, approve, revise, and export controlled documents without juggling disconnected files."
   },
   {
-    title: "Operate",
-    description: "Capture evidence from daily operations with reminders and role-based tasks."
+    title: "Run operational registers",
+    description:
+      "Manage incidents, NCRs, risks, objectives, audits, reviews, training, suppliers, maintenance, calibration, and feedback."
   },
   {
-    title: "Improve",
-    description: "Close the loop on nonconformities with corrective actions you can prove."
+    title: "Follow actions through",
+    description:
+      "Assign actions from NCRs, incidents, audits, meetings, and reviews, then track overdue items from one dashboard."
   }
 ];
 
@@ -47,40 +51,47 @@ export default function HomePage() {
     <Container className="space-y-20">
       <section className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr]">
         <div className="space-y-6">
-          <span className="tag">ISO 9001 readiness</span>
+          <span className="tag">Practical ISO management for SMEs</span>
           <h1 className="text-4xl font-semibold tracking-tight text-ink md:text-5xl">
-            Compliance without the chaos.
+            Run your ISO management system in one place.
           </h1>
           <p className="text-lg text-slate">
-            ISO Assistant is the clarity layer for fast-growing teams. Keep procedures, evidence,
-            and audits aligned in a single workspace designed for ISO 9001.
+            ISO Assistant helps small and mid-sized businesses manage controlled documents,
+            records, actions, audits, risks, reviews, training, and operational workflows in one
+            practical system. It is strongest for ISO 9001 today, with expanding support for ISO
+            13485, ISO 14001, and ISO 45001.
           </p>
           <div className="flex flex-wrap gap-4">
-            <Link
-              href="/contact"
+            <a
+              href={siteConfig.signupUrl}
               className="rounded-full bg-ink px-6 py-3 text-sm font-semibold text-white shadow-glow transition hover:-translate-y-0.5"
             >
-              Start free trial
-            </Link>
+              Start 30-day free trial
+            </a>
             <Link
-              href="/login"
+              href="/features"
               className="rounded-full border border-ink/10 bg-white px-6 py-3 text-sm font-semibold text-ink transition hover:-translate-y-0.5"
             >
-              Log in
+              Explore features
             </Link>
           </div>
+          <p className="text-sm text-slate">
+            30-day free trial. Only your email is required to get started.
+          </p>
           <p className="text-xs uppercase tracking-[0.25em] text-slate">
-            Trusted by quality teams in manufacturing, health, and logistics
+            Built for SMEs in services, IT, engineering, manufacturing, and medical-device-related
+            businesses
           </p>
         </div>
         <div className="card space-y-6">
           <div className="space-y-2">
             <p className="text-xs font-semibold uppercase tracking-[0.25em] text-slate">
-              Live readiness snapshot
+              What teams manage in ISO Assistant
             </p>
-            <h2 className="text-2xl font-semibold text-ink">Q1 ISO 9001 review</h2>
+            <h2 className="text-2xl font-semibold text-ink">Day-to-day QMS work</h2>
             <p className="text-sm text-slate">
-              14 procedures current · 3 upcoming reviews · 2 corrective actions in progress
+              Controlled documents, actions, audits, reviews, risks, training, suppliers, and
+              operational records in one workspace
             </p>
           </div>
           <div className="grid gap-4">
@@ -105,19 +116,19 @@ export default function HomePage() {
 
       <section className="grid gap-10 lg:grid-cols-[1fr_1.1fr]">
         <div className="space-y-4">
-          <span className="tag">Built for ISO teams</span>
+          <span className="tag">Built for practical use</span>
           <h2 className="text-3xl font-semibold text-ink">
-            Move from spreadsheets to a compliance operating system.
+            A practical alternative to spreadsheets and disconnected files.
           </h2>
           <p className="text-base text-slate">
-            ISO Assistant replaces scattered docs with a workflow that mirrors your ISO clauses.
-            Assign owners, collect evidence, and keep every version of every record tied to
-            objective proof.
+            ISO Assistant gives quality, compliance, HSE, operations, and management teams one
+            place to run the day-to-day operation of an ISO management system without unnecessary
+            complexity.
           </p>
           <ul className="space-y-3 text-sm text-slate">
-            <li>Clause-aligned templates for SOPs, logs, and audits.</li>
-            <li>Automated review reminders so nothing expires in the dark.</li>
-            <li>Exportable audit packs for external reviewers.</li>
+            <li>Controlled document workflows with draft, review, approve, and revise steps.</li>
+            <li>Email notifications for approvals, assignments, and follow-up.</li>
+            <li>Role-based permissions and dashboards for activity and overdue work.</li>
           </ul>
         </div>
         <div className="card space-y-6">
@@ -140,48 +151,58 @@ export default function HomePage() {
 
       <section className="card grid gap-8 md:grid-cols-[1.2fr_0.8fr]">
         <div className="space-y-3">
-          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-slate">Customer note</p>
-          <p className="text-2xl font-semibold text-ink">
-            “We walked into our ISO audit with every policy, training record, and corrective
-            action already packaged. The auditor asked fewer follow-ups than ever.”
+          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-slate">
+            Standards support
           </p>
-          <p className="text-sm text-slate">— Quality Director, Mid-market manufacturing</p>
+          <p className="text-2xl font-semibold text-ink">
+            ISO 9001 is the strongest fit today, with shared workflows that also support ISO
+            13485, ISO 14001, and ISO 45001.
+          </p>
+          <p className="text-sm text-slate">
+            ISO 13485 is partly supported where the quality system closely follows ISO 9001 and
+            requires additional traceability and controlled processes. ISO 14001 and ISO 45001 are
+            supported through shared workflows, but they are not yet as mature or complete in the
+            platform as ISO 9001.
+          </p>
         </div>
         <div className="space-y-4 rounded-2xl border border-dashed border-ink/20 p-5 text-sm text-slate">
-          <p className="font-semibold text-ink">What you get in week one</p>
+          <p className="font-semibold text-ink">What you can start managing</p>
           <ul className="space-y-2">
-            <li>ISO 9001 clause map imported into your workspace.</li>
-            <li>Procedure templates assigned to owners.</li>
-            <li>Evidence checklist tailored to your products.</li>
+            <li>Controlled documents, work instructions, and revision history.</li>
+            <li>Incidents, NCRs, actions, audits, and management review follow-up.</li>
+            <li>Training, supplier, maintenance, calibration, and customer feedback records.</li>
           </ul>
           <Link
-            href="/contact"
+            href="/features"
             className="inline-flex items-center gap-2 text-sm font-semibold text-ink"
           >
-            Book onboarding
+            See full feature set
           </Link>
         </div>
       </section>
 
       <section className="card flex flex-col items-start gap-6 md:flex-row md:items-center md:justify-between">
         <div>
-          <h2 className="text-3xl font-semibold text-ink">Ready for a calmer audit season?</h2>
+          <h2 className="text-3xl font-semibold text-ink">
+            Start your 30-day free trial with just your email.
+          </h2>
           <p className="mt-2 text-sm text-slate">
-            Start your free trial or talk with our team about your ISO roadmap.
+            Use ISO Assistant to run your management system day to day, then move to a standard
+            monthly plan when you are ready.
           </p>
         </div>
         <div className="flex flex-wrap gap-4">
-          <Link
-            href="/contact"
+          <a
+            href={siteConfig.signupUrl}
             className="rounded-full bg-ink px-6 py-3 text-sm font-semibold text-white shadow-glow transition hover:-translate-y-0.5"
           >
-            Start free trial
-          </Link>
+            Start 30-day free trial
+          </a>
           <Link
             href="/contact"
             className="rounded-full border border-ink/10 bg-white px-6 py-3 text-sm font-semibold text-ink transition hover:-translate-y-0.5"
           >
-            Talk to sales
+            Contact us
           </Link>
         </div>
       </section>

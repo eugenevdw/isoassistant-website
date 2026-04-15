@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Container } from "./Container";
+import { siteConfig } from "../../lib/site";
 
 const navLinks = [
   { href: "/features", label: "Features" },
@@ -29,12 +30,12 @@ export function Header() {
           >
             Log in
           </Link>
-          <Link
-            href="/contact"
+          <a
+            href={siteConfig.signupUrl}
             className="rounded-full bg-ink px-5 py-2 text-white shadow-glow transition hover:-translate-y-0.5"
           >
-            Start free trial
-          </Link>
+            Start 30-day trial
+          </a>
         </div>
       </Container>
     </header>
