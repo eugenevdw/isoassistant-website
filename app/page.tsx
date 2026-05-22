@@ -19,7 +19,7 @@ const pillars = [
   {
     title: "Run daily ISO workflows in one place",
     description:
-      "Track actions, audits, risks, reviews, training, suppliers, maintenance, calibration, and customer feedback together."
+      "Track incidents, NCRs, work instructions, actions, audits, risks, reviews, training, suppliers, maintenance, calibration, and customer feedback together."
   },
   {
     title: "Stay on top of work that matters",
