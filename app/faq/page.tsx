@@ -31,6 +31,11 @@ const faqs = [
       `The standard account is ${siteConfig.pricing.standardMonthly} for 5 seats. Extra seats are ${siteConfig.pricing.extraSeatMonthly} per seat, per month.`
   },
   {
+    question: "Can I cancel, and what happens to my documents if I do?",
+    answer:
+      "Yes, you can cancel your subscription. Before cancellation takes effect, you should export or download any documents and records you need to keep. After cancellation, account access may be restricted, and data may be retained for a limited period before deletion in line with our data retention policy."
+  },
+  {
     question: "Does ISO Assistant guarantee certification or connect directly to certification bodies?",
     answer:
       "No. ISO Assistant helps you run the day-to-day operation of your management system, but it does not guarantee certification, automate the full certification process end to end, or integrate directly with certification bodies."

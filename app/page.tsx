@@ -90,8 +90,8 @@ export default function HomePage() {
             </p>
             <h2 className="text-2xl font-semibold text-ink">Day-to-day QMS work</h2>
             <p className="text-sm text-slate">
-              Controlled documents, actions, audits, reviews, risks, training, suppliers, and
-              operational records in one workspace
+              Controlled documents, work instructions, incidents, non-conformance records, actions,
+              audits, reviews, risks, training, suppliers, and operational records in one workspace
             </p>
           </div>
           <div className="grid gap-4">
@@ -130,6 +130,11 @@ export default function HomePage() {
             <li>Email notifications for approvals, assignments, and follow-up.</li>
             <li>Role-based permissions and dashboards for activity and overdue work.</li>
           </ul>
+          <p className="text-sm text-slate">
+            The program was developed with input from ISO consultants with more than 10 years of
+            experience across hundreds of clients, helping shape a practical, hands-on, intuitive,
+            and easy-to-operate system.
+          </p>
         </div>
         <div className="card space-y-6">
           <p className="text-xs font-semibold uppercase tracking-[0.25em] text-slate">Workflow</p>
