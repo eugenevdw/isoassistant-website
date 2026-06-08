@@ -38,9 +38,11 @@ const features = [
 ];
 
 const integrations = [
-  "Strongest fit today for ISO 9001",
-  "Partial support for ISO 13485 where workflows align closely with ISO 9001",
-  "Shared workflow support for ISO 14001 and ISO 45001",
+  "Support for ISO 9001 quality management systems",
+  "Support for ISO 14001 environmental management systems",
+  "Support for ISO 45001 occupational health and safety management systems",
+  "Support for ISO 13485 quality systems where the configured records fit your process",
+  "Support for integrated management systems combining ISO 9001, ISO 14001 and ISO 45001",
   "Practical fit for SMEs rather than complex enterprise rollouts"
 ];
 
@@ -90,10 +92,10 @@ export default function FeaturesPage() {
             Accurate support, without overclaiming.
           </h2>
           <p className="text-sm text-slate">
-            ISO Assistant is strongest for ISO 9001 today. ISO 13485 is partly supported where the
-            quality system closely matches ISO 9001, while ISO 14001 and ISO 45001 are supported
-            through shared workflows for documents, actions, audits, risks, reviews, training, and
-            operational records.
+            ISO Assistant supports ISO 9001, ISO 14001, ISO 45001 and ISO 13485 management-system
+            work. It also supports integrated management systems that combine ISO 9001, ISO 14001
+            and ISO 45001 through shared workflows for documents, actions, audits, risks, reviews,
+            training and operational records.
           </p>
         </div>
         <div className="rounded-2xl border border-dashed border-ink/20 p-5 text-sm text-slate">

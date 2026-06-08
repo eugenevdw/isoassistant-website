@@ -8,7 +8,7 @@ const faqs = [
   {
     question: "Which ISO standards does ISO Assistant support?",
     answer:
-      "ISO 9001 is the strongest and most mature part of the platform today. ISO 13485 is partly supported where the quality system closely follows ISO 9001. ISO 14001 and ISO 45001 are supported through shared workflows, but they are not yet as mature or complete as ISO 9001 in the platform."
+      "ISO Assistant supports ISO 9001, ISO 14001, ISO 45001 and ISO 13485. It also supports an integrated management system that combines ISO 9001, ISO 14001 and ISO 45001. The exact requirements depend on your organisation and the standard."
   },
   {
     question: "Who is ISO Assistant built for?",
