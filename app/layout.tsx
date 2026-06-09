@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { Sora, Source_Sans_3 } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import { Footer } from "./components/layout/Footer";
 import { Header } from "./components/layout/Header";
@@ -31,6 +32,18 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${display.variable} ${body.variable}`}>
       <body className="gradient-shell min-h-screen">
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-1ZM5RSFGYV"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-1ZM5RSFGYV');
+          `}
+        </Script>
         <div className="grid-border min-h-screen">
           <Header />
           <main className="pb-20 pt-12">{children}</main>
