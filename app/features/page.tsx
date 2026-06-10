@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Container } from "../components/layout/Container";
 import { siteConfig } from "../lib/site";
@@ -8,32 +9,91 @@ const features = [
   {
     title: "Controlled document management",
     description:
-      "Create and manage SOPs and work instructions with rich text editing, numbering, revision control, approvals, and PDF export."
+      "Create and manage SOPs and work instructions with rich text editing, numbering, revision control, approvals, and PDF export.",
+    screenshot: {
+      src: "/images/product/work-instruction-approval-state.png",
+      alt: "ISO Assistant work instruction showing document metadata and approval status"
+    }
   },
   {
     title: "Approvals and change requests",
     description:
-      "Use draft, submit for approval, request changes, and approve workflows to keep controlled documents current."
+      "Use draft, submit for approval, request changes, and approve workflows to keep controlled documents current.",
+    screenshot: {
+      src: "/images/product/management-review-actions-history.png",
+      alt: "ISO Assistant action item form with progress update history"
+    }
   },
   {
     title: "Incidents and NCRs",
     description:
-      "Manage incidents, nonconformities, and related actions in one place with clear follow-up."
+      "Manage incidents, nonconformities, and related actions in one place with clear follow-up.",
+    screenshot: {
+      src: "/images/product/incident-register-list.png",
+      alt: "ISO Assistant incident register with filters and open incident records"
+    }
   },
   {
     title: "Audits and management reviews",
     description:
-      "Run internal audits, capture management review minutes, and track resulting actions through to completion."
+      "Run internal audits, capture management review minutes, and track resulting actions through to completion.",
+    screenshot: {
+      src: "/images/product/audit-detail-evidence-actions.png",
+      alt: "ISO Assistant internal audit detail with evidence pack and audit actions"
+    }
   },
   {
     title: "Operational registers",
     description:
-      "Maintain risks and opportunities, objectives, training, suppliers, maintenance, calibration, and customer feedback records."
+      "Maintain risks and opportunities, objectives, training, suppliers, maintenance, calibration, and customer feedback records.",
+    screenshot: {
+      src: "/images/product/risk-detail-owner-target-linked-records.png",
+      alt: "ISO Assistant risk detail with owner, target date and linked records"
+    }
   },
   {
     title: "Roles, notifications, and dashboards",
     description:
-      "Use role-based permissions, email notifications, and dashboard views for activity and overdue items."
+      "Use role-based permissions, email notifications, and dashboard views for activity and overdue items.",
+    screenshot: {
+      src: "/images/product/dashboard-overview.png",
+      alt: "ISO Assistant dashboard with open records, overdue counts and audit readiness"
+    }
+  }
+];
+
+const workflowExamples = [
+  {
+    title: "Incident detail",
+    description: "Capture issue context, assigned ownership, risk level and follow-up actions.",
+    screenshot: {
+      src: "/images/product/incident-detail.png",
+      alt: "ISO Assistant incident detail record with actions, root cause notes and assignment"
+    }
+  },
+  {
+    title: "NCR root cause and action",
+    description: "Keep containment, 5 Whys analysis and corrective actions in the same record.",
+    screenshot: {
+      src: "/images/product/ncr-detail-root-cause-actions.png",
+      alt: "ISO Assistant NCR detail showing root cause analysis and required corrective actions"
+    }
+  },
+  {
+    title: "Training linked to documents",
+    description: "Show which instruction or NCR triggered training and record attendance evidence.",
+    screenshot: {
+      src: "/images/product/training-record-linked-document.png",
+      alt: "ISO Assistant training record linked to a work instruction and NCR"
+    }
+  },
+  {
+    title: "Objectives and improvement",
+    description: "Track measurable objectives with owners, target dates, status and linked records.",
+    screenshot: {
+      src: "/images/product/objective-detail-owner-target-status.png",
+      alt: "ISO Assistant objective detail with owner, target date, status and linked records"
+    }
   }
 ];
 
@@ -76,11 +136,56 @@ export default function FeaturesPage() {
 
       <section className="grid gap-6 md:grid-cols-2">
         {features.map((feature) => (
-          <div key={feature.title} className="card">
-            <h3 className="text-xl font-semibold text-ink">{feature.title}</h3>
-            <p className="mt-3 text-sm text-slate">{feature.description}</p>
+          <div key={feature.title} className="card min-w-0 overflow-hidden p-0">
+            <div className="relative aspect-video border-b border-ink/10">
+              <Image
+                src={feature.screenshot.src}
+                alt={feature.screenshot.alt}
+                fill
+                className="object-cover"
+                loading="lazy"
+                sizes="(min-width: 1152px) 552px, (min-width: 768px) calc(50vw - 36px), calc(100vw - 48px)"
+              />
+            </div>
+            <div className="p-6">
+              <h3 className="text-xl font-semibold text-ink">{feature.title}</h3>
+              <p className="mt-3 text-sm text-slate">{feature.description}</p>
+            </div>
           </div>
         ))}
+      </section>
+
+      <section className="space-y-6">
+        <div className="max-w-3xl space-y-3">
+          <span className="tag">Workflow examples</span>
+          <h2 className="text-3xl font-semibold text-ink">
+            See how records move from issue to evidence
+          </h2>
+          <p className="text-base text-slate">
+            These examples show the detailed records behind incidents, NCRs, training and
+            objectives, where audit evidence usually needs to stay connected.
+          </p>
+        </div>
+        <div className="grid gap-6 md:grid-cols-2">
+          {workflowExamples.map((example) => (
+            <div key={example.title} className="card min-w-0 overflow-hidden p-0">
+              <div className="relative aspect-video border-b border-ink/10">
+                <Image
+                  src={example.screenshot.src}
+                  alt={example.screenshot.alt}
+                  fill
+                  className="object-cover"
+                  loading="lazy"
+                  sizes="(min-width: 1152px) 552px, (min-width: 768px) calc(50vw - 36px), calc(100vw - 48px)"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold text-ink">{example.title}</h3>
+                <p className="mt-3 text-sm text-slate">{example.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
       </section>
 
       <section className="card grid gap-6 md:grid-cols-[1.1fr_0.9fr]">

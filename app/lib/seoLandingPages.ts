@@ -20,6 +20,11 @@ export const seoLandingPages = {
     h1: "ISO 9001 software for practical quality management",
     intro:
       "ISO Assistant helps small businesses maintain the everyday records behind a quality management system: incidents, non-conformances, objectives, training, controlled documents, calibration, maintenance and audit evidence.",
+    screenshot: {
+      src: "/images/product/ncr-detail-root-cause-actions.png",
+      alt: "ISO Assistant NCR detail showing root cause analysis and corrective actions",
+      label: "NCRs, root cause analysis and corrective actions stay connected."
+    },
     primaryFocus: "Keep ISO 9001 work out of scattered spreadsheets",
     primaryCopy:
       "Many small teams implement ISO 9001 and then struggle to keep the system current. ISO Assistant gives quality managers and business owners one place to manage actions, records and reminders as normal work happens.",
@@ -45,6 +50,11 @@ export const seoLandingPages = {
     h1: "ISO 13485 software for practical quality-system control",
     intro:
       "ISO Assistant helps medical-device-related suppliers and SMEs keep quality-system records under control, including document control, training, NCRs, traceable records, calibration, maintenance and audit readiness.",
+    screenshot: {
+      src: "/images/product/training-record-linked-document.png",
+      alt: "ISO Assistant training record linked to a work instruction and NCR",
+      label: "Training evidence can stay linked to the controlled record that triggered it."
+    },
     primaryFocus: "Control the quality records that need traceability",
     primaryCopy:
       "ISO 13485 environments need disciplined records, current instructions and clear follow-up. ISO Assistant supports practical quality-system maintenance where your process needs controlled documents, training evidence and operational registers.",
@@ -70,6 +80,11 @@ export const seoLandingPages = {
     h1: "ISO 14001 software for practical environmental management",
     intro:
       "ISO Assistant helps SMEs maintain the everyday records behind an environmental management system, including controlled documents, objectives, risks, incidents, actions, training and audit evidence.",
+    screenshot: {
+      src: "/images/product/objective-detail-owner-target-status.png",
+      alt: "ISO Assistant objective detail with owner, target date and status",
+      label: "Environmental objectives can be tracked with owners, dates and status."
+    },
     primaryFocus: "Keep environmental management records in one place",
     primaryCopy:
       "ISO 14001 work needs clear evidence that environmental risks, objectives, incidents, actions and responsibilities are being managed. ISO Assistant keeps those records visible instead of scattered across spreadsheets and folders.",
@@ -95,6 +110,11 @@ export const seoLandingPages = {
     h1: "ISO 45001 software for practical health and safety management",
     intro:
       "ISO Assistant helps SMEs maintain the day-to-day records behind an occupational health and safety management system, including incidents, actions, risks, training, documents, maintenance and audit evidence.",
+    screenshot: {
+      src: "/images/product/incident-detail.png",
+      alt: "ISO Assistant incident detail with assigned owner, risk level and follow-up actions",
+      label: "Safety incidents become controlled records with assigned follow-up."
+    },
     primaryFocus: "Keep safety actions and evidence under control",
     primaryCopy:
       "ISO 45001 work depends on clear follow-up, current procedures, training evidence and risk records. ISO Assistant helps teams manage those records without relying on disconnected spreadsheets.",
@@ -120,6 +140,11 @@ export const seoLandingPages = {
     h1: "IMS software for ISO 9001, ISO 14001 and ISO 45001",
     intro:
       "ISO Assistant supports integrated management systems that combine ISO 9001, ISO 14001 and ISO 45001, giving SMEs one place to manage shared documents, actions, risks, objectives, training and audit evidence.",
+    screenshot: {
+      src: "/images/product/dashboard-overview.png",
+      alt: "ISO Assistant QMS dashboard showing open records and audit-readiness sections",
+      label: "Shared IMS activity is visible from one dashboard."
+    },
     primaryFocus: "Run shared management-system work once",
     primaryCopy:
       "An IMS is easier to maintain when common workflows are shared instead of duplicated. ISO Assistant helps teams manage documents, actions, audits, reviews, risks and evidence across quality, environmental and OH&S requirements.",
@@ -145,6 +170,11 @@ export const seoLandingPages = {
     h1: "Simple ISO compliance software for growing businesses",
     intro:
       "ISO Assistant is built for SMEs that already have, or are building, an ISO management system and need a practical way to keep records, actions, documents and audit evidence current.",
+    screenshot: {
+      src: "/images/product/audit-detail-evidence-actions.png",
+      alt: "ISO Assistant internal audit detail with evidence pack and audit actions",
+      label: "Audit evidence and actions stay connected to the record that created them."
+    },
     primaryFocus: "Maintain the system after implementation",
     primaryCopy:
       "ISO compliance work does not stop after policies are written. Incidents need follow-up, NCRs need action, training needs evidence and documents need control. ISO Assistant brings that routine work into one place.",
@@ -170,6 +200,11 @@ export const seoLandingPages = {
     h1: "ISO document control software without spreadsheet chaos",
     intro:
       "ISO Assistant helps small businesses manage controlled SOPs and work instructions alongside the incidents, training records, actions and evidence that show the system is being maintained.",
+    screenshot: {
+      src: "/images/product/work-instruction-approval-state.png",
+      alt: "ISO Assistant work instruction showing approval status and document metadata",
+      label: "Controlled documents keep approval state, version and evidence visible."
+    },
     primaryFocus: "Keep documents controlled and connected to daily work",
     primaryCopy:
       "Document control is more than saving files in a shared folder. ISO Assistant supports numbering, revisions, approvals and PDF export for controlled documents, then keeps related records close to the work.",
@@ -195,6 +230,11 @@ export const seoLandingPages = {
     h1: "ISO software built for small businesses",
     intro:
       "ISO Assistant gives small businesses a practical way to maintain an ISO management system without turning daily quality, compliance or operations work into a maze of spreadsheets.",
+    screenshot: {
+      src: "/images/product/incident-register-list.png",
+      alt: "ISO Assistant incident register with filters and open incident records",
+      label: "Small teams can log issues once and keep ownership clear."
+    },
     primaryFocus: "Simple enough for SMEs to keep using",
     primaryCopy:
       "Most small businesses do not fail because they lack another policy. They struggle because incidents, actions, training records and reminders end up spread across spreadsheets, email and forgotten folders. ISO Assistant brings those daily records into one place.",

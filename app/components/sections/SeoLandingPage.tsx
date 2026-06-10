@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Container } from "../layout/Container";
 import { siteConfig } from "../../lib/site";
@@ -6,6 +7,11 @@ export interface SeoLandingPageContent {
   eyebrow: string;
   h1: string;
   intro: string;
+  screenshot: {
+    src: string;
+    alt: string;
+    label: string;
+  };
   primaryFocus: string;
   primaryCopy: string;
   recordsTitle: string;
@@ -46,6 +52,25 @@ export function SeoLandingPage({ page }: SeoLandingPageProps) {
           >
             View demo
           </Link>
+        </div>
+      </section>
+
+      <section className="min-w-0 overflow-hidden rounded-3xl border border-white/70 bg-white/85 shadow-soft backdrop-blur">
+        <div className="relative aspect-video">
+          <Image
+            src={page.screenshot.src}
+            alt={page.screenshot.alt}
+            fill
+            className="object-cover"
+            priority
+            sizes="(min-width: 1152px) 1152px, calc(100vw - 48px)"
+          />
+        </div>
+        <div className="flex flex-col gap-2 border-t border-ink/10 px-5 py-4 md:flex-row md:items-center md:justify-between">
+          <p className="text-sm font-semibold text-ink">{page.screenshot.label}</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate">
+            ISO Assistant workspace
+          </p>
         </div>
       </section>
 

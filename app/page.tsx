@@ -4,6 +4,7 @@ import { FAQSection } from "./components/sections/FAQSection";
 import { Container } from "./components/layout/Container";
 import { homepageFaqs } from "./lib/faqs";
 import { seoLandingPageLinks } from "./lib/seoLandingPages";
+import { siteConfig } from "./lib/site";
 
 export const dynamic = "force-static";
 
@@ -88,12 +89,12 @@ export default function HomePage() {
               evidence in one simple ISO management system.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Link
-                href="/contact"
+              <a
+                href={siteConfig.signupUrl}
                 className="rounded-full bg-ink px-6 py-3 text-sm font-semibold text-white shadow-glow transition hover:-translate-y-0.5"
               >
-                View demo
-              </Link>
+                Start 30-day free trial
+              </a>
               <Link
                 href="#modules"
                 className="rounded-full border border-ink/10 bg-white px-6 py-3 text-sm font-semibold text-ink transition hover:-translate-y-0.5"
@@ -107,30 +108,45 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="card space-y-6">
-            <div className="space-y-2">
+          <div
+            id="product-demo"
+            className="min-w-0 overflow-hidden rounded-3xl border border-white/70 bg-white/85 shadow-soft backdrop-blur"
+          >
+            <div className="border-b border-ink/10 px-5 py-4">
               <p className="text-xs font-semibold uppercase tracking-[0.25em] text-slate">
-                Day-to-day ISO work
+                Product demo
               </p>
-              <h2 className="text-2xl font-semibold text-ink">
-                One place for records, actions and evidence
+              <h2 className="mt-2 text-2xl font-semibold text-ink">
+                See ISO Assistant in action
               </h2>
-              <p className="text-sm text-slate">
-                ISO Assistant brings document control, NCR management software, incident records,
-                training, calibration, maintenance, risks and audit readiness software into one
-                practical workspace.
-              </p>
             </div>
-            <div className="grid gap-4">
-              {[
-                "Supports ISO 9001, ISO 14001, ISO 45001, ISO 13485 and IMS workflows",
-                "Built for small and mid-sized businesses",
-                "30-day free trial with 5 seats on the standard account"
-              ].map((item) => (
-                <div key={item} className="rounded-2xl border border-ink/10 bg-white p-4">
-                  <p className="text-sm font-semibold text-ink">{item}</p>
-                </div>
-              ))}
+            <video
+              aria-label="ISO Assistant product demo video"
+              className="aspect-video w-full max-w-full bg-ink object-cover"
+              controls
+              playsInline
+              poster="/videos/iso-assistant-demo-poster.jpg"
+              preload="metadata"
+            >
+              <source src="/videos/iso-assistant-demo.mp4" type="video/mp4" />
+            </video>
+            <div className="space-y-4 p-5">
+              <p className="text-sm text-slate">
+                A quick walkthrough of the dashboard, records and action tracking used to keep ISO
+                evidence organised.
+              </p>
+              <div className="grid gap-3 text-sm font-semibold text-ink">
+                {[
+                  "Supports ISO 9001, ISO 14001, ISO 45001, ISO 13485 and IMS workflows",
+                  "Built for small and mid-sized businesses",
+                  "30-day free trial with 5 seats on the standard account"
+                ].map((item) => (
+                  <div key={item} className="flex gap-3">
+                    <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-lime" />
+                    <p>{item}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
