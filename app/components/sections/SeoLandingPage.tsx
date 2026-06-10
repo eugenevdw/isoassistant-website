@@ -1,5 +1,5 @@
-import Image from "next/image";
 import Link from "next/link";
+import { ProductScreenshot } from "../ProductScreenshot";
 import { Container } from "../layout/Container";
 import { siteConfig } from "../../lib/site";
 
@@ -57,11 +57,9 @@ export function SeoLandingPage({ page }: SeoLandingPageProps) {
 
       <section className="min-w-0 overflow-hidden rounded-3xl border border-white/70 bg-white/85 shadow-soft backdrop-blur">
         <div className="relative aspect-video">
-          <Image
+          <ProductScreenshot
             src={page.screenshot.src}
             alt={page.screenshot.alt}
-            fill
-            className="object-cover"
             priority
             sizes="(min-width: 1152px) 1152px, calc(100vw - 48px)"
           />

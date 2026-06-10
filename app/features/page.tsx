@@ -1,6 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
 import { Container } from "../components/layout/Container";
+import { ProductScreenshot } from "../components/ProductScreenshot";
 import { siteConfig } from "../lib/site";
 
 export const dynamic = "force-static";
@@ -138,12 +138,9 @@ export default function FeaturesPage() {
         {features.map((feature) => (
           <div key={feature.title} className="card min-w-0 overflow-hidden p-0">
             <div className="relative aspect-video border-b border-ink/10">
-              <Image
+              <ProductScreenshot
                 src={feature.screenshot.src}
                 alt={feature.screenshot.alt}
-                fill
-                className="object-cover"
-                loading="lazy"
                 sizes="(min-width: 1152px) 552px, (min-width: 768px) calc(50vw - 36px), calc(100vw - 48px)"
               />
             </div>
@@ -170,12 +167,9 @@ export default function FeaturesPage() {
           {workflowExamples.map((example) => (
             <div key={example.title} className="card min-w-0 overflow-hidden p-0">
               <div className="relative aspect-video border-b border-ink/10">
-                <Image
+                <ProductScreenshot
                   src={example.screenshot.src}
                   alt={example.screenshot.alt}
-                  fill
-                  className="object-cover"
-                  loading="lazy"
                   sizes="(min-width: 1152px) 552px, (min-width: 768px) calc(50vw - 36px), calc(100vw - 48px)"
                 />
               </div>
