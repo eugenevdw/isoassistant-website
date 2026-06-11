@@ -47,10 +47,10 @@ export function SeoLandingPage({ page }: SeoLandingPageProps) {
             Start 30-day free trial
           </a>
           <Link
-            href="/contact"
+            href="/pricing"
             className="rounded-full border border-ink/10 bg-white px-6 py-3 text-sm font-semibold text-ink transition hover:-translate-y-0.5"
           >
-            View demo
+            View pricing
           </Link>
         </div>
       </section>

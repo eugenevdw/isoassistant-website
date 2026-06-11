@@ -261,17 +261,17 @@ export default function HomePage() {
               Ready to move ISO records out of spreadsheets?
             </h2>
             <p className="mt-2 text-sm text-slate">
-              View a demo or start the 30-day trial to see how ISO Assistant handles the daily work
+              Start the 30-day trial to see how ISO Assistant handles the daily work
               behind an ISO management system.
             </p>
           </div>
           <div className="flex flex-wrap gap-4">
-            <Link
-              href="/contact"
+            <a
+              href={siteConfig.signupUrl}
               className="rounded-full bg-ink px-6 py-3 text-sm font-semibold text-white shadow-glow transition hover:-translate-y-0.5"
             >
-              View demo
-            </Link>
+              Start 30-day free trial
+            </a>
             <Link
               href="/pricing"
               className="rounded-full border border-ink/10 bg-white px-6 py-3 text-sm font-semibold text-ink transition hover:-translate-y-0.5"

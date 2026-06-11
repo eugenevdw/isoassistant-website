@@ -74,12 +74,6 @@ export default function ContactPage() {
                   {siteConfig.phoneDisplay}
                 </a>
               </p>
-              <p>
-                Pricing:{" "}
-                <span className="font-semibold text-ink">
-                  {siteConfig.pricing.standardMonthly} for 5 seats
-                </span>
-              </p>
             </div>
             <Link
               href="/pricing"
