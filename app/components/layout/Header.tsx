@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Container } from "./Container";
 import { siteConfig } from "../../lib/site";
@@ -13,7 +14,19 @@ export function Header() {
   return (
     <header className="border-b border-white/70 bg-white/70 backdrop-blur">
       <Container className="flex items-center justify-between py-5">
-        <Link href="/" className="text-lg font-semibold tracking-tight text-ink">
+        <Link
+          href="/"
+          className="flex items-center gap-2 text-lg font-semibold tracking-tight text-ink"
+        >
+          <Image
+            src="/icon.png"
+            alt=""
+            width={32}
+            height={32}
+            aria-hidden="true"
+            className="h-8 w-8 shrink-0"
+            priority
+          />
           ISO Assistant
         </Link>
         <nav className="hidden items-center gap-8 text-sm font-medium text-slate md:flex">
