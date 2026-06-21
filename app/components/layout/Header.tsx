@@ -21,10 +21,10 @@ export function Header() {
           <Image
             src="/icon.png"
             alt=""
-            width={32}
-            height={32}
+            width={40}
+            height={40}
             aria-hidden="true"
-            className="h-8 w-8 shrink-0"
+            className="h-[2.4rem] w-[2.4rem] shrink-0"
             priority
           />
           ISO Assistant
