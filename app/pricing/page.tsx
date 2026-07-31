@@ -1,43 +1,57 @@
 import Link from "next/link";
+import { headers } from "next/headers";
 import { Container } from "../components/layout/Container";
+import { getCountryCode, getRegionalPricing } from "../lib/pricing";
 import { siteConfig } from "../lib/site";
 
-export const dynamic = "force-static";
-
-const tiers = [
-  {
-    name: "30-day free trial",
-    price: "R0",
-    description: "Start your trial with only your email address.",
-    features: [
-      "30 days to explore the platform",
-      "Simple sign-up path",
-      "Focused on getting SMEs started quickly"
-    ]
-  },
-  {
-    name: "Standard",
-    price: siteConfig.pricing.standardMonthly,
-    description: siteConfig.pricing.standardDetails,
-    features: [
-      "Controlled documents and records",
-      "Actions, audits, risks, reviews, and registers",
-      "Roles, permissions, notifications, and dashboards"
-    ]
-  },
-  {
-    name: "Extra seats",
-    price: siteConfig.pricing.extraSeatMonthly,
-    description: siteConfig.pricing.extraSeatDetails,
-    features: [
-      "Add seats as your team grows",
-      "Suitable for owners, managers, consultants, and representatives",
-      "Talk to us if you need help deciding fit"
-    ]
-  }
-];
+export const dynamic = "force-dynamic";
 
 export default function PricingPage() {
+  const countryCode = getCountryCode(headers());
+  const pricing = getRegionalPricing(countryCode);
+  const tiers = [
+    {
+      name: "30-day free trial",
+      price: pricing.freeTrial,
+      description: "Start your trial with only your email address.",
+      features: [
+        "30 days to explore the platform",
+        "Simple sign-up path",
+        "Focused on getting SMEs started quickly"
+      ]
+    },
+    {
+      name: "First standard",
+      price: pricing.firstStandardMonthly,
+      description: siteConfig.pricing.firstStandardDetails,
+      features: [
+        "Controlled documents and records",
+        "Actions, audits, risks, reviews, and registers",
+        "Roles, permissions, notifications, and dashboards"
+      ]
+    },
+    {
+      name: "Additional standards",
+      price: pricing.additionalStandardMonthly,
+      description: siteConfig.pricing.additionalStandardDetails,
+      features: [
+        "Run multiple standards in one account",
+        "Build an integrated management system",
+        "Add standards as your requirements grow"
+      ]
+    },
+    {
+      name: "Extra seats",
+      price: pricing.extraSeatMonthly,
+      description: siteConfig.pricing.extraSeatDetails,
+      features: [
+        "Add seats as your team grows",
+        "Suitable for owners, managers, consultants, and representatives",
+        "Talk to us if you need help deciding fit"
+      ]
+    }
+  ];
+
   return (
     <Container className="space-y-16">
       <section className="space-y-5">
@@ -46,12 +60,13 @@ export default function PricingPage() {
           Simple pricing for small and mid-sized teams.
         </h1>
         <p className="max-w-2xl text-lg text-slate">
-          Start with a 30-day free trial, then move to a straightforward monthly plan with five
-          seats included.
+          Start with a 30-day free trial, then choose the standards you need. Your first standard
+          includes up to five users.
         </p>
+        <p className="text-sm font-medium text-slate">{pricing.currencyNotice}</p>
       </section>
 
-      <section className="grid gap-6 lg:grid-cols-3">
+      <section className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
         {tiers.map((tier) => (
           <div key={tier.name} className="card flex h-full flex-col">
             <div className="space-y-3">

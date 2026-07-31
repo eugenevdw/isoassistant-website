@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { Container } from "../components/layout/Container";
-import { siteConfig } from "../lib/site";
 
 export const dynamic = "force-static";
 
@@ -28,7 +27,7 @@ const faqs = [
   {
     question: "What does pricing look like after the trial?",
     answer:
-      `The standard account is ${siteConfig.pricing.standardMonthly} for 5 seats. Extra seats are ${siteConfig.pricing.extraSeatMonthly} per seat, per month.`
+      "Pricing is based on your location. Your first standard includes up to 5 users, with separate monthly prices for each additional standard and each extra seat. The pricing page shows the current ZAR, EUR, or USD prices for you."
   },
   {
     question: "Can I cancel, and what happens to my documents if I do?",
