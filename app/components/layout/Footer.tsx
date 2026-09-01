@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Container } from "./Container";
 import { siteConfig } from "../../lib/site";
 import { seoLandingPageLinks } from "../../lib/seoLandingPages";
+import { AnalyticsPreferencesButton } from "../analytics/Analytics";
 
 export function Footer() {
   return (
@@ -19,6 +20,7 @@ export function Footer() {
             the International Organization for Standardization.
           </p>
           <p className="text-xs text-slate">© 2026 ISO Assistant. All rights reserved.</p>
+          <AnalyticsPreferencesButton className="text-left text-xs text-slate underline-offset-4 transition hover:text-ink hover:underline" />
         </div>
         <div className="space-y-3 text-sm text-slate">
           <p className="text-xs font-semibold uppercase tracking-[0.25em] text-ink">Product</p>
@@ -44,14 +46,23 @@ export function Footer() {
         </div>
         <div className="space-y-3 text-sm text-slate">
           <p className="text-xs font-semibold uppercase tracking-[0.25em] text-ink">Contact</p>
-          <Link href="/contact" className="block transition hover:text-ink">
+          <a href={siteConfig.signupUrl} className="block transition hover:text-ink">
             Start free trial
+          </a>
+          <Link href="/contact" className="block transition hover:text-ink">
+            Contact us
           </Link>
           <a className="block transition hover:text-ink" href={`mailto:${siteConfig.email}`}>
             {siteConfig.email}
           </a>
           <a className="block transition hover:text-ink" href={siteConfig.phoneHref}>
             {siteConfig.phoneDisplay}
+          </a>
+          <a className="block transition hover:text-ink" href="https://app.isoassistant.com/privacy">
+            Privacy Policy
+          </a>
+          <a className="block transition hover:text-ink" href="https://app.isoassistant.com/terms">
+            Terms and Conditions
           </a>
         </div>
       </Container>

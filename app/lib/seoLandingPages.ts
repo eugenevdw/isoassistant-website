@@ -98,6 +98,36 @@ export const seoLandingPages = {
     standardsNote:
       "ISO Assistant supports practical ISO 14001 management-system maintenance. Certification depends on your organisation's environmental controls, implementation and audit outcome."
   },
+  "iso-22000-software": {
+    slug: "iso-22000-software",
+    linkLabel: "ISO 22000 software",
+    metadata: {
+      title: "ISO 22000 Food Safety Software for SMEs | ISO Assistant",
+      description:
+        "ISO Assistant helps food businesses manage ISO 22000 documents, food safety incidents, NCRs, risks, training, audits and corrective actions."
+    },
+    eyebrow: "ISO 22000 software",
+    h1: "ISO 22000 software for practical food safety management",
+    intro:
+      "ISO Assistant helps food businesses keep the everyday records behind a food safety management system under control, including documents, incidents, NCRs, risks, training, actions, audits and management reviews.",
+    screenshot: {
+      src: "/images/product/audit-detail-evidence-actions.png",
+      alt: "ISO Assistant audit record showing evidence and assigned corrective actions",
+      label: "Food safety audit evidence and follow-up actions stay connected."
+    },
+    primaryFocus: "Keep food safety records current and connected",
+    primaryCopy:
+      "Food safety management depends on controlled procedures, clear responsibilities, traceable evidence and prompt follow-up. ISO Assistant gives small teams one workspace for maintaining those records instead of relying on disconnected spreadsheets and folders.",
+    recordsTitle: "Manage practical ISO 22000 evidence",
+    records: [
+      "Food safety incidents, NCRs and corrective actions",
+      "Controlled procedures and work instructions",
+      "Risks, opportunities, objectives and assigned tasks",
+      "Training records, internal audits and management reviews"
+    ],
+    standardsNote:
+      "ISO Assistant supports practical ISO 22000 management-system maintenance. It helps organise records and actions, but certification and food safety performance depend on your organisation's controls, implementation and audit outcome."
+  },
   "iso-45001-software": {
     slug: "iso-45001-software",
     linkLabel: "ISO 45001 software",

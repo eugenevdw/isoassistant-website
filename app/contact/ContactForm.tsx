@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import { trackAnalyticsEvent } from "../lib/analytics";
 
 const initialValues = {
   name: "",
@@ -41,6 +42,7 @@ export function ContactForm() {
       setStatus("success");
       setFeedback(result.message ?? "Thanks. Your message has been sent.");
       setValues(initialValues);
+      trackAnalyticsEvent("generate_lead", { lead_source: "contact_form" });
     } catch {
       setStatus("error");
       setFeedback("We could not send your message right now.");
