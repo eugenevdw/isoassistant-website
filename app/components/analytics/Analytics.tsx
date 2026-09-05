@@ -108,6 +108,7 @@ export function Analytics() {
       if (!target || !target.href.startsWith("https://app.isoassistant.com/app/signup")) return;
       trackAnalyticsEvent("trial_cta_click", {
         cta_text: (target.textContent || "Start trial").trim().slice(0, 100),
+        cta_location: target.dataset.ctaLocation || "page",
         page_path: window.location.pathname,
         transport_type: "beacon",
       });

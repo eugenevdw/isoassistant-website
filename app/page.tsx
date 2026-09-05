@@ -5,6 +5,7 @@ import { Container } from "./components/layout/Container";
 import { homepageFaqs } from "./lib/faqs";
 import { seoLandingPageLinks } from "./lib/seoLandingPages";
 import { siteConfig } from "./lib/site";
+import { ProductDemo } from "./components/sections/ProductDemo";
 
 export const dynamic = "force-static";
 
@@ -120,20 +121,11 @@ export default function HomePage() {
                 See ISO Assistant in action
               </h2>
             </div>
-            <video
-              aria-label="ISO Assistant product demo video"
-              className="aspect-video w-full max-w-full bg-ink object-cover"
-              controls
-              playsInline
-              poster="/videos/iso-assistant-demo-poster.jpg"
-              preload="metadata"
-            >
-              <source src="/videos/iso-assistant-demo.mp4" type="video/mp4" />
-            </video>
+            <ProductDemo />
             <div className="space-y-4 p-5">
               <p className="text-sm text-slate">
-                A quick walkthrough of the dashboard, records and action tracking used to keep ISO
-                evidence organised.
+                See how records, tasks, email reminders, document approvals, internal audits and
+                management review connect in one practical workflow.
               </p>
               <div className="grid gap-3 text-sm font-semibold text-ink">
                 {[
