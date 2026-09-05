@@ -34,7 +34,7 @@ export function ProductDemo() {
 
   return (
     <>
-      <div className={`relative aspect-video bg-ink ${ended ? "min-h-48" : ""}`}>
+      <div className={`relative aspect-video w-full min-w-0 max-w-full bg-ink ${ended ? "min-h-48" : ""}`}>
         <video
           ref={videoRef}
           aria-label="ISO Assistant product demo video"
