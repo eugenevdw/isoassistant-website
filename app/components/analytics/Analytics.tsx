@@ -64,8 +64,9 @@ function captureAttribution() {
 function enableAnalytics() {
   (window as typeof window & Record<string, unknown>)[`ga-disable-${ANALYTICS_MEASUREMENT_ID}`] = false;
   window.dataLayer = window.dataLayer || [];
-  window.gtag = function gtag(...args: unknown[]) {
-    window.dataLayer?.push(args);
+  window.gtag = function gtag() {
+    // gtag commands must be Arguments objects, not plain arrays.
+    window.dataLayer?.push(arguments);
   };
   window.gtag("js", new Date());
   window.gtag("config", ANALYTICS_MEASUREMENT_ID, {
