@@ -11,16 +11,16 @@ const features = [
     description:
       "Create and manage SOPs and work instructions with rich text editing, numbering, revision control, approvals, and PDF export.",
     screenshot: {
-      src: "/images/product/work-instruction-approval-state.png",
+      src: "/images/product/current/work-instruction-approval-state.png",
       alt: "ISO Assistant work instruction showing document metadata and approval status"
     }
   },
   {
-    title: "Approvals and change requests",
+    title: "Management review actions",
     description:
-      "Use draft, submit for approval, request changes, and approve workflows to keep controlled documents current.",
+      "Capture review decisions, assign actions, set due dates and record progress updates through to completion.",
     screenshot: {
-      src: "/images/product/management-review-actions-history.png",
+      src: "/images/product/current/management-review-actions-history.png",
       alt: "ISO Assistant action item form with progress update history"
     }
   },
@@ -29,7 +29,7 @@ const features = [
     description:
       "Manage incidents, nonconformities, and related actions in one place with clear follow-up.",
     screenshot: {
-      src: "/images/product/incident-register-list.png",
+      src: "/images/product/current/incident-register-list.png",
       alt: "ISO Assistant incident register with filters and open incident records"
     }
   },
@@ -38,8 +38,8 @@ const features = [
     description:
       "Run internal audits, capture management review minutes, and track resulting actions through to completion.",
     screenshot: {
-      src: "/images/product/audit-detail-evidence-actions.png",
-      alt: "ISO Assistant internal audit detail with evidence pack and audit actions"
+      src: "/images/product/current/audit-detail-evidence-actions.png",
+      alt: "ISO Assistant internal audit with checklist progress, compliance summary and audit scope"
     }
   },
   {
@@ -47,8 +47,26 @@ const features = [
     description:
       "Maintain risks and opportunities, objectives, training, suppliers, maintenance, calibration, and customer feedback records.",
     screenshot: {
-      src: "/images/product/risk-detail-owner-target-linked-records.png",
-      alt: "ISO Assistant risk detail with owner, target date and linked records"
+      src: "/images/product/current/risk-detail-owner-target-linked-records.png",
+      alt: "ISO Assistant quality risk detail with mitigation, contingency and current risk level"
+    }
+  },
+  {
+    title: "Environmental aspects and impacts",
+    description:
+      "Identify environmental aspects, evaluate baseline and residual significance, and track operational controls and review dates for ISO 14001.",
+    screenshot: {
+      src: "/images/product/current/iso-14001-environmental-register.png",
+      alt: "Environmental aspects and impacts register with activity categories, risk significance and review dates"
+    }
+  },
+  {
+    title: "Hazards and health and safety risks",
+    description:
+      "Assess workplace hazards, record the hierarchy of controls, track implementation and manage approvals and reviews for ISO 45001.",
+    screenshot: {
+      src: "/images/product/current/iso-45001-ohs-risk-register.png",
+      alt: "OH&S risk register with hazards, initial and residual risk ratings and control implementation status"
     }
   },
   {
@@ -56,7 +74,7 @@ const features = [
     description:
       "Use role-based permissions, email notifications, and dashboard views for activity and overdue items.",
     screenshot: {
-      src: "/images/product/dashboard-overview.png",
+      src: "/images/product/current/dashboard-overview.png",
       alt: "ISO Assistant dashboard with open records, overdue counts and audit readiness"
     }
   }
@@ -67,15 +85,15 @@ const workflowExamples = [
     title: "Incident detail",
     description: "Capture issue context, assigned ownership, risk level and follow-up actions.",
     screenshot: {
-      src: "/images/product/incident-detail.png",
-      alt: "ISO Assistant incident detail record with actions, root cause notes and assignment"
+      src: "/images/product/current/incident-detail.png",
+      alt: "ISO Assistant incident detail record with description, actions and root cause notes"
     }
   },
   {
     title: "NCR root cause and action",
     description: "Keep containment, 5 Whys analysis and corrective actions in the same record.",
     screenshot: {
-      src: "/images/product/ncr-detail-root-cause-actions.png",
+      src: "/images/product/current/iso-9001-ncr-root-cause.png",
       alt: "ISO Assistant NCR detail showing root cause analysis and required corrective actions"
     }
   },
@@ -83,16 +101,16 @@ const workflowExamples = [
     title: "Training linked to documents",
     description: "Show which instruction or NCR triggered training and record attendance evidence.",
     screenshot: {
-      src: "/images/product/training-record-linked-document.png",
-      alt: "ISO Assistant training record linked to a work instruction and NCR"
+      src: "/images/product/current/iso-13485-traceability-training.png",
+      alt: "ISO Assistant traceability training record with instruction reference, attendance and effectiveness"
     }
   },
   {
     title: "Objectives and improvement",
     description: "Track measurable objectives with owners, target dates, status and linked records.",
     screenshot: {
-      src: "/images/product/objective-detail-owner-target-status.png",
-      alt: "ISO Assistant objective detail with owner, target date, status and linked records"
+      src: "/images/product/current/objective-detail-owner-target-status.png",
+      alt: "ISO Assistant objective detail with success measure, owner, target date and ISO 9001 standard"
     }
   }
 ];

@@ -21,9 +21,25 @@ export const seoLandingPages = {
     intro:
       "ISO Assistant helps small businesses maintain the everyday records behind a quality management system: incidents, non-conformances, objectives, training, controlled documents, calibration, maintenance and audit evidence.",
     screenshot: {
-      src: "/images/product/ncr-detail-root-cause-actions.png",
-      alt: "ISO Assistant NCR detail showing root cause analysis and corrective actions",
-      label: "NCRs, root cause analysis and corrective actions stay connected."
+      src: "/images/product/current/iso-9001-quality-ncr.png",
+      alt: "Quality NCR for CNC bore dimensions outside drawing tolerance, showing status, ownership and the reported defect",
+      label: "Quality NCR: record the defect, assign responsibility and track the response."
+    },
+    workflow: {
+      title: "Turn a quality defect into a controlled improvement",
+      description: "When inspection finds an out-of-tolerance part, keep the investigation and follow-up in the same NCR. This demo follows a machining defect through root cause analysis and changes to the inspection process.",
+      steps: [
+        "Record the non-conformance and immediate containment, including the affected batch.",
+        "Work through the 5 Whys and document the root cause behind the defect.",
+        "Link the corrective action to a revised work instruction and operator training.",
+        "Record effectiveness checks and review the related risk before closing the NCR."
+      ],
+      screenshot: {
+        src: "/images/product/current/iso-9001-ncr-root-cause.png",
+        alt: "NCR 5 Whys analysis with corrective actions linked to work instruction WI-0001 and training record TR-0001",
+        aspectRatio: "950 / 820",
+        label: "From root cause to work instruction, training and process changes."
+      }
     },
     primaryFocus: "Keep ISO 9001 work out of scattered spreadsheets",
     primaryCopy:
@@ -51,9 +67,25 @@ export const seoLandingPages = {
     intro:
       "ISO Assistant helps medical-device-related suppliers and SMEs keep quality-system records under control, including document control, training, NCRs, traceable records, calibration, maintenance and audit readiness.",
     screenshot: {
-      src: "/images/product/training-record-linked-document.png",
-      alt: "ISO Assistant training record linked to a work instruction and NCR",
-      label: "Training evidence can stay linked to the controlled record that triggered it."
+      src: "/images/product/current/iso-13485-supplier-ncr.png",
+      alt: "Example supplier NCR for medical device component packs missing the required lot number",
+      label: "Illustrative NCR entry: a missing lot identifier on medical device components."
+    },
+    workflow: {
+      title: "Connect supplier non-conformances to competence evidence",
+      description: "For medical device suppliers, incoming-material checks, controlled instructions and staff competence need clear records. Capture a lot-identification issue in an NCR, then document the instruction changes and training needed to strengthen receiving checks.",
+      steps: [
+        "Document supplier non-conformances, affected materials and containment in an NCR.",
+        "Keep receiving and inspection instructions under revision and approval control.",
+        "Reference the relevant instruction in training records and record attendance and effectiveness.",
+        "Maintain calibration, maintenance and audit evidence alongside the quality records."
+      ],
+      screenshot: {
+        src: "/images/product/current/iso-13485-traceability-training.png",
+        alt: "Incoming material traceability training with a work instruction reference, completion status and attendance effectiveness",
+        aspectRatio: "1214 / 715",
+        label: "Manufacturing demo: training on material identification, certificates and purchase requirements."
+      }
     },
     primaryFocus: "Control the quality records that need traceability",
     primaryCopy:
@@ -74,22 +106,40 @@ export const seoLandingPages = {
     metadata: {
       title: "ISO 14001 Software for SMEs | ISO Assistant",
       description:
-        "ISO Assistant helps SMEs manage ISO 14001 documents, actions, risks, objectives, training, incidents and audit evidence."
+        "Manage ISO 14001 environmental aspects and impacts, significance assessments, operational controls, objectives, incidents and audit evidence."
     },
     eyebrow: "ISO 14001 software",
     h1: "ISO 14001 software for practical environmental management",
     intro:
-      "ISO Assistant helps SMEs maintain the everyday records behind an environmental management system, including controlled documents, objectives, risks, incidents, actions, training and audit evidence.",
+      "Identify environmental aspects, evaluate their impacts and keep operational controls visible. ISO Assistant brings your environmental register, objectives, incidents, training and audit evidence into one workspace.",
     screenshot: {
-      src: "/images/product/objective-detail-owner-target-status.png",
-      alt: "ISO Assistant objective detail with owner, target date and status",
-      label: "Environmental objectives can be tracked with owners, dates and status."
+      src: "/images/product/current/iso-14001-environmental-register.png",
+      alt: "Environmental aspects and impacts register showing chemical handling and waste activities with baseline risk, residual risk and review dates",
+      label: "Environmental register: assess activities, impacts and risk significance."
+    },
+    workflow: {
+      title: "Follow an environmental aspect through to its controls",
+      description: "Start with an activity such as storing chemicals. Record the environmental aspect, the potential impact and the controls to manage it, with responsibilities and review dates kept alongside the assessment.",
+      steps: [
+        "Group aspects by activity, department and category, including emissions, waste, water and resource use.",
+        "Record impacts and compliance references, then compare baseline and residual risk significance.",
+        "Document operational controls, mitigation and training needs for each assessment.",
+        "Filter the register for significant aspects and keep review dates and outstanding controls visible."
+      ],
+      screenshot: {
+        src: "/images/product/current/iso-14001-environmental-assessment.png",
+        alt: "Chemical handling assessment showing the environmental impact, compliance references, mitigation and training needs",
+        aspectRatio: "945 / 690",
+        label: "Chemical handling example: connect the potential impact to practical controls."
+      }
     },
     primaryFocus: "Keep environmental management records in one place",
     primaryCopy:
-      "ISO 14001 work needs clear evidence that environmental risks, objectives, incidents, actions and responsibilities are being managed. ISO Assistant keeps those records visible instead of scattered across spreadsheets and folders.",
+      "Use the dedicated Environmental Aspects & Impacts register to maintain assessments for chemical handling, waste, emissions, energy and water use. Keep the wider environmental system moving with objectives, incident follow-up, controlled procedures and review actions.",
     recordsTitle: "Manage practical ISO 14001 evidence",
     records: [
+      "Environmental aspects, impacts and significance assessments",
+      "Operational controls, responsibilities and review dates",
       "Environmental objectives, risks and opportunities",
       "Incidents, corrective actions and follow-up",
       "Controlled procedures and work instructions",
@@ -111,13 +161,13 @@ export const seoLandingPages = {
     intro:
       "ISO Assistant helps food businesses keep the everyday records behind a food safety management system under control, including documents, incidents, NCRs, risks, training, actions, audits and management reviews.",
     screenshot: {
-      src: "/images/product/audit-detail-evidence-actions.png",
-      alt: "ISO Assistant audit record showing evidence and assigned corrective actions",
-      label: "Food safety audit evidence and follow-up actions stay connected."
+      src: "/images/product/current/iso-22000-food-safety-ncr.png",
+      alt: "Example Food Safety NCR for a finished-product batch with an incorrect allergen declaration",
+      label: "Illustrative food safety NCR entry: record an allergen-label issue and containment."
     },
     primaryFocus: "Keep food safety records current and connected",
     primaryCopy:
-      "Food safety management depends on controlled procedures, clear responsibilities, traceable evidence and prompt follow-up. ISO Assistant gives small teams one workspace for maintaining those records instead of relying on disconnected spreadsheets and folders.",
+      "Use Food Safety and HACCP NCR types to record issues such as incorrect allergen labels, document affected batches and containment, and follow root cause analysis through to corrective actions. Keep work instructions, training and effectiveness checks connected to the follow-up.",
     recordsTitle: "Manage practical ISO 22000 evidence",
     records: [
       "Food safety incidents, NCRs and corrective actions",
@@ -134,24 +184,42 @@ export const seoLandingPages = {
     metadata: {
       title: "ISO 45001 Software for SMEs | ISO Assistant",
       description:
-        "ISO Assistant helps SMEs manage ISO 45001 incidents, actions, risks, documents, training, maintenance and audit evidence."
+        "Manage ISO 45001 hazards, OH&S risk assessments, controls, review dates, safety incidents, training and audit evidence in one workspace."
     },
     eyebrow: "ISO 45001 software",
     h1: "ISO 45001 software for practical health and safety management",
     intro:
-      "ISO Assistant helps SMEs maintain the day-to-day records behind an occupational health and safety management system, including incidents, actions, risks, training, documents, maintenance and audit evidence.",
+      "Identify workplace hazards, assess health and safety risks and track the controls your team needs to implement. ISO Assistant connects that work with safety incidents, training, procedures, maintenance and audit evidence.",
     screenshot: {
-      src: "/images/product/incident-detail.png",
-      alt: "ISO Assistant incident detail with assigned owner, risk level and follow-up actions",
-      label: "Safety incidents become controlled records with assigned follow-up."
+      src: "/images/product/current/iso-45001-ohs-risk-register.png",
+      alt: "Hazards and OH&S risk register showing vehicle movement, chemical handling, initial and residual risk, review dates and control status",
+      label: "Health and safety register: keep hazards, risk ratings and outstanding controls visible."
+    },
+    workflow: {
+      title: "Move from identifying a hazard to implementing controls",
+      description: "A vehicle-movement assessment can bring the hazard, people exposed, risk ratings and planned controls together. The dedicated OH&S workflow helps you keep track of what is planned, what is in place and when to review it.",
+      steps: [
+        "Identify hazards by activity, work area and hazard category, and record who may be exposed.",
+        "Assess initial and residual risk using probability, severity and frequency.",
+        "Record the hierarchy of controls, implementation status, owners and target dates.",
+        "Route assessments for approval, track linked actions and revisit assessments when reviews are due."
+      ],
+      screenshot: {
+        src: "/images/product/current/iso-45001-hazard-assessment.png",
+        alt: "Vehicle movement safety assessment showing planned engineering controls, administrative controls, PPE and implementation status",
+        aspectRatio: "945 / 710",
+        label: "Vehicle movement example: separate planned controls from controls already in place."
+      }
     },
     primaryFocus: "Keep safety actions and evidence under control",
     primaryCopy:
-      "ISO 45001 work depends on clear follow-up, current procedures, training evidence and risk records. ISO Assistant helps teams manage those records without relying on disconnected spreadsheets.",
+      "Use the Hazards & OH&S Risks register to manage workplace assessments and control implementation. Keep incident investigations, corrective actions, worker training and maintenance records available for follow-up and review.",
     recordsTitle: "Manage practical ISO 45001 records",
     records: [
       "Incidents, corrective actions and overdue follow-up",
-      "OH&S risks, opportunities and objectives",
+      "Hazard identification, exposure and OH&S risk assessments",
+      "Control implementation, approvals and review dates",
+      "OH&S opportunities and objectives",
       "Controlled procedures and training records",
       "Maintenance records, audit evidence and review actions"
     ],
@@ -171,8 +239,8 @@ export const seoLandingPages = {
     intro:
       "ISO Assistant supports integrated management systems that combine ISO 9001, ISO 14001 and ISO 45001, giving SMEs one place to manage shared documents, actions, risks, objectives, training and audit evidence.",
     screenshot: {
-      src: "/images/product/dashboard-overview.png",
-      alt: "ISO Assistant QMS dashboard showing open records and audit-readiness sections",
+      src: "/images/product/current/dashboard-overview.png",
+      alt: "ISO Assistant QMS dashboard showing current workload, overdue items and module summaries",
       label: "Shared IMS activity is visible from one dashboard."
     },
     primaryFocus: "Run shared management-system work once",
@@ -201,9 +269,9 @@ export const seoLandingPages = {
     intro:
       "ISO Assistant is built for SMEs that already have, or are building, an ISO management system and need a practical way to keep records, actions, documents and audit evidence current.",
     screenshot: {
-      src: "/images/product/audit-detail-evidence-actions.png",
-      alt: "ISO Assistant internal audit detail with evidence pack and audit actions",
-      label: "Audit evidence and actions stay connected to the record that created them."
+      src: "/images/product/current/audit-detail-evidence-actions.png",
+      alt: "ISO Assistant internal audit detail with checklist progress, compliance summary and audit scope",
+      label: "Track audit progress, review findings and follow up on assigned actions."
     },
     primaryFocus: "Maintain the system after implementation",
     primaryCopy:
@@ -231,7 +299,7 @@ export const seoLandingPages = {
     intro:
       "ISO Assistant helps small businesses manage controlled SOPs and work instructions alongside the incidents, training records, actions and evidence that show the system is being maintained.",
     screenshot: {
-      src: "/images/product/work-instruction-approval-state.png",
+      src: "/images/product/current/work-instruction-approval-state.png",
       alt: "ISO Assistant work instruction showing approval status and document metadata",
       label: "Controlled documents keep approval state, version and evidence visible."
     },
@@ -261,7 +329,7 @@ export const seoLandingPages = {
     intro:
       "ISO Assistant gives small businesses a practical way to maintain an ISO management system without turning daily quality, compliance or operations work into a maze of spreadsheets.",
     screenshot: {
-      src: "/images/product/incident-register-list.png",
+      src: "/images/product/current/incident-register-list.png",
       alt: "ISO Assistant incident register with filters and open incident records",
       label: "Small teams can log issues once and keep ownership clear."
     },

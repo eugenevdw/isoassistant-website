@@ -8,9 +8,10 @@ interface ProductScreenshotProps {
   alt: string;
   sizes: string;
   priority?: boolean;
+  aspectRatio?: string;
 }
 
-export function ProductScreenshot({ src, alt, sizes, priority = false }: ProductScreenshotProps) {
+export function ProductScreenshot({ src, alt, sizes, priority = false, aspectRatio = "16 / 9" }: ProductScreenshotProps) {
   const [isOpen, setIsOpen] = useState(false);
   const dialogRef = useRef<HTMLDialogElement>(null);
   const titleId = useId();
@@ -57,14 +58,15 @@ export function ProductScreenshot({ src, alt, sizes, priority = false }: Product
       <button
         type="button"
         aria-label={`Open screenshot: ${alt}`}
-        className="group relative block aspect-video w-full overflow-hidden text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-2"
+        className="group relative block w-full overflow-hidden bg-white text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-2"
+        style={{ aspectRatio }}
         onClick={() => setIsOpen(true)}
       >
         <Image
           src={src}
           alt={alt}
           fill
-          className="object-cover transition duration-300 group-hover:scale-[1.02]"
+          className="object-contain"
           priority={priority}
           loading={priority ? undefined : "lazy"}
           sizes={sizes}

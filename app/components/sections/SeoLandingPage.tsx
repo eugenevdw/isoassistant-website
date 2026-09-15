@@ -12,6 +12,12 @@ export interface SeoLandingPageContent {
     alt: string;
     label: string;
   };
+  workflow?: {
+    title: string;
+    description: string;
+    steps: string[];
+    screenshot: { src: string; alt: string; aspectRatio: string; label: string };
+  };
   primaryFocus: string;
   primaryCopy: string;
   recordsTitle: string;
@@ -71,6 +77,30 @@ export function SeoLandingPage({ page }: SeoLandingPageProps) {
           </p>
         </div>
       </section>
+
+      {page.workflow ? (
+        <section className="grid items-center gap-8 lg:grid-cols-2">
+          <div className="space-y-5">
+            <span className="tag">In practice</span>
+            <h2 className="text-3xl font-semibold tracking-tight text-ink">{page.workflow.title}</h2>
+            <p className="text-base text-slate">{page.workflow.description}</p>
+            <ul className="list-disc space-y-3 pl-5 text-sm text-slate marker:text-ink">
+              {page.workflow.steps.map((step) => <li key={step}>{step}</li>)}
+            </ul>
+          </div>
+          <figure className="min-w-0 overflow-hidden rounded-3xl border border-white/70 bg-white shadow-soft">
+            <ProductScreenshot
+              src={page.workflow.screenshot.src}
+              alt={page.workflow.screenshot.alt}
+              aspectRatio={page.workflow.screenshot.aspectRatio}
+              sizes="(min-width: 1152px) 552px, (min-width: 1024px) 50vw, calc(100vw - 48px)"
+            />
+            <figcaption className="border-t border-ink/10 px-5 py-4 text-sm text-slate">
+              {page.workflow.screenshot.label}
+            </figcaption>
+          </figure>
+        </section>
+      ) : null}
 
       <section className="grid gap-8 lg:grid-cols-[1fr_1fr]">
         <div className="card space-y-3">
