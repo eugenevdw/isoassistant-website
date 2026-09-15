@@ -27,7 +27,7 @@ const faqs = [
   {
     question: "What does pricing look like after the trial?",
     answer:
-      "Pricing is based on your location. Your first standard includes up to 5 users, with separate monthly prices for each additional standard and each extra seat. The pricing page shows the current ZAR, EUR, or USD prices for you."
+      "Pricing is based on your location. Your first standard includes up to 5 users, with separate monthly prices for each additional standard and each extra seat. We offer ZAR, GBP, AUD, NZD, CAD, EUR and USD pricing. Your account’s billing currency is saved at signup and does not change when you travel."
   },
   {
     question: "Can I cancel, and what happens to my documents if I do?",
