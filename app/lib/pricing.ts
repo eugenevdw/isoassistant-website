@@ -13,6 +13,9 @@ export type RegionalPricing = {
 };
 
 const euroCountryCodes = new Set([
+  "AL", "AM", "AZ", "BA", "BY", "CH", "CZ", "DK", "FO", "GE", "GG", "GI",
+  "HU", "IM", "IS", "JE", "LI", "MD", "MK", "NO", "PL", "RO", "RS", "RU",
+  "SE", "TR", "UA", "AX",
   "AD",
   "AT",
   "BE",
@@ -54,7 +57,11 @@ const euroCountryCodes = new Set([
 const currencyNotices = {
   ZAR: "Prices shown in South African rand (ZAR).",
   EUR: "Prices shown in euros (EUR).",
-  USD: "Prices shown in US dollars (USD)."
+  USD: "Prices shown in US dollars (USD).",
+  GBP: "Prices shown in British pounds (GBP).",
+  AUD: "Prices shown in Australian dollars (AUD).",
+  NZD: "Prices shown in New Zealand dollars (NZD).",
+  CAD: "Prices shown in Canadian dollars (CAD)."
 } as const;
 
 function buildRegionalPricing(currency: keyof typeof siteConfig.pricing.currencies): RegionalPricing {
@@ -75,9 +82,13 @@ export function getCountryCode(requestHeaders: RequestHeaders): string | null {
 }
 
 export function getRegionalPricing(countryCode: string | null): RegionalPricing {
-  // Preserve the existing ZAR prices when geolocation is unavailable, as it is
-  // during local development. Vercel supplies the country code in production.
-  if (!countryCode || countryCode === "ZA") return buildRegionalPricing("ZAR");
-  if (euroCountryCodes.has(countryCode)) return buildRegionalPricing("EUR");
+  countryCode = countryCode?.trim().toUpperCase() ?? null;
+  // Match app signup: unknown locations use international USD, not a ZAR guess.
+  if (countryCode === "ZA") return buildRegionalPricing("ZAR");
+  if (countryCode === "GB") return buildRegionalPricing("GBP");
+  if (countryCode === "AU") return buildRegionalPricing("AUD");
+  if (countryCode === "NZ") return buildRegionalPricing("NZD");
+  if (countryCode === "CA") return buildRegionalPricing("CAD");
+  if (countryCode && euroCountryCodes.has(countryCode)) return buildRegionalPricing("EUR");
   return buildRegionalPricing("USD");
 }

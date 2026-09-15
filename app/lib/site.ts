@@ -26,6 +26,22 @@ export const siteConfig = {
         firstStandardMonthly: "$79/mo",
         additionalStandardMonthly: "$30/mo",
         extraSeatMonthly: "$13/mo"
+      },
+      GBP: {
+        freeTrial: "£0", firstStandardMonthly: "£59/mo",
+        additionalStandardMonthly: "£22/mo", extraSeatMonthly: "£10/mo"
+      },
+      AUD: {
+        freeTrial: "A$0", firstStandardMonthly: "A$109/mo",
+        additionalStandardMonthly: "A$42/mo", extraSeatMonthly: "A$18/mo"
+      },
+      NZD: {
+        freeTrial: "NZ$0", firstStandardMonthly: "NZ$139/mo",
+        additionalStandardMonthly: "NZ$52/mo", extraSeatMonthly: "NZ$23/mo"
+      },
+      CAD: {
+        freeTrial: "C$0", firstStandardMonthly: "C$109/mo",
+        additionalStandardMonthly: "C$42/mo", extraSeatMonthly: "C$18/mo"
       }
     }
   }
