@@ -115,13 +115,37 @@ const workflowExamples = [
   }
 ];
 
-const integrations = [
-  "Support for ISO 9001 quality management systems",
-  "Support for ISO 14001 environmental management systems",
-  "Support for ISO 45001 occupational health and safety management systems",
-  "Support for ISO 13485 quality systems where the configured records fit your process",
-  "Support for integrated management systems combining ISO 9001, ISO 14001 and ISO 45001",
-  "Practical fit for SMEs rather than complex enterprise rollouts"
+const supportedStandards = [
+  {
+    title: "ISO 9001",
+    description: "Quality management",
+    href: "/iso-9001-software"
+  },
+  {
+    title: "ISO 13485",
+    description: "Medical device quality management",
+    href: "/iso-13485-software"
+  },
+  {
+    title: "ISO 14001",
+    description: "Environmental management",
+    href: "/iso-14001-software"
+  },
+  {
+    title: "ISO 22000",
+    description: "Food safety management",
+    href: "/iso-22000-software"
+  },
+  {
+    title: "ISO 45001",
+    description: "Occupational health and safety management",
+    href: "/iso-45001-software"
+  },
+  {
+    title: "Integrated management systems",
+    description: "Combine ISO 9001, ISO 14001 and ISO 45001",
+    href: "/ims-software"
+  }
 ];
 
 export default function FeaturesPage() {
@@ -200,29 +224,33 @@ export default function FeaturesPage() {
         </div>
       </section>
 
-      <section className="card grid gap-6 md:grid-cols-[1.1fr_0.9fr]">
+      <section className="card space-y-6" aria-labelledby="supported-standards-heading">
         <div className="space-y-3">
-          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-slate">
-            Standards fit
-          </p>
-          <h2 className="text-2xl font-semibold text-ink">
-            Accurate support, without overclaiming.
+          <h2 id="supported-standards-heading" className="text-2xl font-semibold text-ink">
+            Supported standards
           </h2>
           <p className="text-sm text-slate">
-            ISO Assistant supports ISO 9001, ISO 14001, ISO 45001 and ISO 13485 management-system
-            work. It also supports integrated management systems that combine ISO 9001, ISO 14001
-            and ISO 45001 through shared workflows for documents, actions, audits, risks, reviews,
-            training and operational records.
+            Explore how ISO Assistant supports the records and workflows for your management system.
           </p>
         </div>
-        <div className="rounded-2xl border border-dashed border-ink/20 p-5 text-sm text-slate">
-          <p className="font-semibold text-ink">Where it fits best</p>
-          <ul className="mt-3 space-y-2">
-            {integrations.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
-        </div>
+        <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {supportedStandards.map((standard) => (
+            <li key={standard.href}>
+              <Link
+                href={standard.href}
+                className="group flex h-full items-start justify-between gap-4 rounded-2xl border border-ink/10 bg-white p-5 transition hover:border-ink/30 hover:bg-mist focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink"
+              >
+                <div>
+                  <h3 className="text-lg font-semibold text-ink group-hover:underline">
+                    {standard.title}
+                  </h3>
+                  <p className="mt-2 text-sm text-slate">{standard.description}</p>
+                </div>
+                <span aria-hidden="true" className="text-lg text-ink">→</span>
+              </Link>
+            </li>
+          ))}
+        </ul>
       </section>
     </Container>
   );
