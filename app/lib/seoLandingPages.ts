@@ -17,9 +17,10 @@ export const seoLandingPages = {
         "ISO Assistant helps SMEs manage ISO 9001 documents, NCRs, objectives, training, calibration, maintenance and audit evidence."
     },
     eyebrow: "ISO 9001 software",
-    h1: "ISO 9001 software for practical quality management",
+    showDemo: true,
+    h1: "Manage ISO 9001 without chasing spreadsheets",
     intro:
-      "ISO Assistant helps small businesses maintain the everyday records behind a quality management system: incidents, non-conformances, objectives, training, controlled documents, calibration, maintenance and audit evidence.",
+      "Keep documents, NCRs, audits and team actions in one place. Give your quality team clear ownership, timely reminders and evidence ready for review.",
     screenshot: {
       src: "/images/product/current/iso-9001-quality-ncr.png",
       alt: "Quality NCR for CNC bore dimensions outside drawing tolerance, showing status, ownership and the reported defect",
@@ -63,9 +64,10 @@ export const seoLandingPages = {
         "ISO Assistant helps medical device suppliers manage controlled documents, training, NCRs, calibration, maintenance and audit evidence."
     },
     eyebrow: "ISO 13485 software",
-    h1: "ISO 13485 software for practical quality-system control",
+    showDemo: true,
+    h1: "Keep ISO 13485 quality records under control",
     intro:
-      "ISO Assistant helps medical-device-related suppliers and SMEs keep quality-system records under control, including document control, training, NCRs, traceable records, calibration, maintenance and audit readiness.",
+      "Bring controlled documents, supplier NCRs, training and audit evidence into one workspace. Keep responsibilities clear and follow-up connected for your medical device quality system.",
     screenshot: {
       src: "/images/product/current/iso-13485-supplier-ncr.png",
       alt: "Example supplier NCR for medical device component packs missing the required lot number",
@@ -109,9 +111,10 @@ export const seoLandingPages = {
         "Manage ISO 14001 environmental aspects and impacts, significance assessments, operational controls, objectives, incidents and audit evidence."
     },
     eyebrow: "ISO 14001 software",
-    h1: "ISO 14001 software for practical environmental management",
+    showDemo: true,
+    h1: "Turn ISO 14001 assessments into clear actions",
     intro:
-      "Identify environmental aspects, evaluate their impacts and keep operational controls visible. ISO Assistant brings your environmental register, objectives, incidents, training and audit evidence into one workspace.",
+      "Keep environmental aspects, impacts, controls and objectives in one place. Assign owners, track follow-up and keep the evidence behind your environmental management system connected.",
     screenshot: {
       src: "/images/product/current/iso-14001-environmental-register.png",
       alt: "Environmental aspects and impacts register showing chemical handling and waste activities with baseline risk, residual risk and review dates",
@@ -157,9 +160,10 @@ export const seoLandingPages = {
         "ISO Assistant helps food businesses manage ISO 22000 documents, food safety incidents, NCRs, risks, training, audits and corrective actions."
     },
     eyebrow: "ISO 22000 software",
-    h1: "ISO 22000 software for practical food safety management",
+    showDemo: true,
+    h1: "Keep ISO 22000 food safety records connected",
     intro:
-      "ISO Assistant helps food businesses keep the everyday records behind a food safety management system under control, including documents, incidents, NCRs, risks, training, actions, audits and management reviews.",
+      "Manage food safety incidents, NCRs, documents and training in one workspace. Give corrective actions clear owners and keep audit evidence close to the work.",
     screenshot: {
       src: "/images/product/current/iso-22000-food-safety-ncr.png",
       alt: "Example Food Safety NCR for a finished-product batch with an incorrect allergen declaration",
@@ -187,9 +191,10 @@ export const seoLandingPages = {
         "Manage ISO 45001 hazards, OH&S risk assessments, controls, review dates, safety incidents, training and audit evidence in one workspace."
     },
     eyebrow: "ISO 45001 software",
-    h1: "ISO 45001 software for practical health and safety management",
+    showDemo: true,
+    h1: "Turn ISO 45001 safety risks into tracked actions",
     intro:
-      "Identify workplace hazards, assess health and safety risks and track the controls your team needs to implement. ISO Assistant connects that work with safety incidents, training, procedures, maintenance and audit evidence.",
+      "Keep hazards, risk assessments, safety incidents and controls in one place. Assign responsibility, follow up on outstanding actions and keep training and audit evidence connected.",
     screenshot: {
       src: "/images/product/current/iso-45001-ohs-risk-register.png",
       alt: "Hazards and OH&S risk register showing vehicle movement, chemical handling, initial and residual risk, review dates and control status",

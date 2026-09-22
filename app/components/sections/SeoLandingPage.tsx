@@ -2,11 +2,13 @@ import Link from "next/link";
 import { ProductScreenshot } from "../ProductScreenshot";
 import { Container } from "../layout/Container";
 import { siteConfig } from "../../lib/site";
+import { ProductDemo } from "./ProductDemo";
 
 export interface SeoLandingPageContent {
   eyebrow: string;
   h1: string;
   intro: string;
+  showDemo?: boolean;
   screenshot: {
     src: string;
     alt: string;
@@ -48,25 +50,42 @@ export function SeoLandingPage({ page }: SeoLandingPageProps) {
         <div className="flex flex-wrap gap-4">
           <a
             href={siteConfig.signupUrl}
+            data-cta-location="standard_hero"
             className="rounded-full bg-ink px-6 py-3 text-sm font-semibold text-white shadow-glow transition hover:-translate-y-0.5"
           >
             Start 30-day free trial
           </a>
           <Link
-            href="/pricing"
+            href={page.showDemo ? "#product-demo" : "/pricing"}
             className="rounded-full border border-ink/10 bg-white px-6 py-3 text-sm font-semibold text-ink transition hover:-translate-y-0.5"
           >
-            View pricing
+            {page.showDemo ? "Watch the demo" : "View pricing"}
           </Link>
         </div>
       </section>
+
+      {page.showDemo ? (
+        <section id="product-demo" aria-labelledby="product-demo-title" className="scroll-mt-24 space-y-5">
+          <div className="flex flex-wrap items-end justify-between gap-4">
+            <div className="space-y-2">
+              <span className="tag">See it in action</span>
+              <h2 id="product-demo-title" className="text-2xl font-semibold text-ink">From everyday tasks to audit-ready evidence</h2>
+              <p className="max-w-2xl text-sm text-slate">Take a 1:49 tour of ISO Assistant: records, reminders, audits, management reviews and document approvals.</p>
+            </div>
+            <Link href="/pricing" className="text-sm font-semibold text-ink underline underline-offset-4">View pricing</Link>
+          </div>
+          <div className="overflow-hidden rounded-3xl border border-ink/10 bg-white shadow-soft">
+            <ProductDemo />
+          </div>
+        </section>
+      ) : null}
 
       <section className="min-w-0 overflow-hidden rounded-3xl border border-white/70 bg-white/85 shadow-soft backdrop-blur">
         <div className="relative aspect-video">
           <ProductScreenshot
             src={page.screenshot.src}
             alt={page.screenshot.alt}
-            priority
+            priority={!page.showDemo}
             sizes="(min-width: 1152px) 1152px, calc(100vw - 48px)"
           />
         </div>
@@ -147,6 +166,14 @@ export function SeoLandingPage({ page }: SeoLandingPageProps) {
           </div>
         </div>
       </section>
+
+      {page.showDemo ? (
+        <section className="card space-y-5 text-center" aria-labelledby="trial-heading">
+          <h2 id="trial-heading" className="text-3xl font-semibold text-ink">Try it with your own team and records</h2>
+          <p className="mx-auto max-w-2xl text-slate">Start your 30-day free trial. Choose your standards, invite a colleague and try the workflow that matters most to your business.</p>
+          <a href={siteConfig.signupUrl} data-cta-location="standard_bottom" className="inline-block rounded-full bg-ink px-6 py-3 text-sm font-semibold text-white shadow-glow transition hover:-translate-y-0.5">Start your 30-day free trial</a>
+        </section>
+      ) : null}
     </Container>
   );
 }
