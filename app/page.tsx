@@ -6,6 +6,7 @@ import { homepageFaqs } from "./lib/faqs";
 import { seoLandingPageLinks } from "./lib/seoLandingPages";
 import { siteConfig } from "./lib/site";
 import { ProductDemo } from "./components/sections/ProductDemo";
+import { TalkToEugene } from "./components/sections/TalkToEugene";
 
 export const dynamic = "force-static";
 
@@ -107,6 +108,7 @@ export default function HomePage() {
               Built for SMEs that need practical ISO compliance software without running the system
               from spreadsheets.
             </p>
+            <TalkToEugene />
           </div>
 
           <div

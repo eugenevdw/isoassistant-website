@@ -42,7 +42,8 @@ const sharedModuleLinks = [
 export function SeoLandingPage({ page }: SeoLandingPageProps) {
   return (
     <Container className="space-y-16">
-      <section className="space-y-6">
+      <section className={page.showDemo ? "grid items-center gap-8 lg:grid-cols-[minmax(0,1fr)_20rem] lg:gap-10" : ""}>
+        <div className="min-w-0 space-y-6">
         <span className="tag">{page.eyebrow}</span>
         <h1 className="max-w-4xl text-4xl font-semibold tracking-tight text-ink md:text-5xl">
           {page.h1}
@@ -63,6 +64,8 @@ export function SeoLandingPage({ page }: SeoLandingPageProps) {
             {page.showDemo ? "Watch the demo" : "View pricing"}
           </Link>
         </div>
+        </div>
+        {page.showDemo ? <TalkToEugene /> : null}
       </section>
 
       {page.showDemo ? (
@@ -142,8 +145,6 @@ export function SeoLandingPage({ page }: SeoLandingPageProps) {
           </ul>
         </div>
       </section>
-
-      {page.showDemo ? <TalkToEugene /> : null}
 
       <section className="card grid gap-6 md:grid-cols-[1.1fr_0.9fr]">
         <div className="space-y-3">
