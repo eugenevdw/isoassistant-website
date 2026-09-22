@@ -2,8 +2,9 @@ export const siteConfig = {
   appUrl: "https://app.isoassistant.com",
   signupUrl: "https://app.isoassistant.com/app/signup?next=%2Fapp",
   email: "info@isoassistant.com",
-  phoneDisplay: "+27 (0)83 226 6899",
+  phoneDisplay: "+27 83 226 6899",
   phoneHref: "tel:+27832266899",
+  whatsappUrl: "https://wa.me/27832266899?text=Hi%20Eugene%2C%20I%27d%20like%20to%20know%20more%20about%20ISO%20Assistant.",
   pricing: {
     firstStandardDetails: "Your first standard with up to 5 users",
     additionalStandardDetails: "For each additional standard",

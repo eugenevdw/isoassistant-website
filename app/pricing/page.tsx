@@ -3,6 +3,7 @@ import { headers } from "next/headers";
 import { Container } from "../components/layout/Container";
 import { getCountryCode, getRegionalPricing } from "../lib/pricing";
 import { siteConfig } from "../lib/site";
+import { TalkToEugene } from "../components/sections/TalkToEugene";
 
 export const dynamic = "force-dynamic";
 
@@ -90,6 +91,8 @@ export default function PricingPage() {
           </div>
         ))}
       </section>
+
+      <TalkToEugene />
 
       <section className="card flex flex-col items-start gap-6 md:flex-row md:items-center md:justify-between">
         <div>

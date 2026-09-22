@@ -3,6 +3,7 @@ import { ProductScreenshot } from "../ProductScreenshot";
 import { Container } from "../layout/Container";
 import { siteConfig } from "../../lib/site";
 import { ProductDemo } from "./ProductDemo";
+import { TalkToEugene } from "./TalkToEugene";
 
 export interface SeoLandingPageContent {
   eyebrow: string;
@@ -141,6 +142,8 @@ export function SeoLandingPage({ page }: SeoLandingPageProps) {
           </ul>
         </div>
       </section>
+
+      {page.showDemo ? <TalkToEugene /> : null}
 
       <section className="card grid gap-6 md:grid-cols-[1.1fr_0.9fr]">
         <div className="space-y-3">
