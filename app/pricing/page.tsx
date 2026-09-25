@@ -1,57 +1,15 @@
 import Link from "next/link";
 import { headers } from "next/headers";
 import { Container } from "../components/layout/Container";
-import { getCountryCode, getRegionalPricing } from "../lib/pricing";
-import { siteConfig } from "../lib/site";
+import { getCountryCode } from "../lib/pricing";
+import { RegionalPriceCards } from "./RegionalPriceCards";
+import { billingCountries } from "../lib/billing-countries";
 import { TalkToEugene } from "../components/sections/TalkToEugene";
 
 export const dynamic = "force-dynamic";
 
 export default function PricingPage() {
   const countryCode = getCountryCode(headers());
-  const pricing = getRegionalPricing(countryCode);
-  const tiers = [
-    {
-      name: "30-day free trial",
-      price: pricing.freeTrial,
-      description: "Start your trial with only your email address.",
-      features: [
-        "30 days to explore the platform",
-        "Simple sign-up path",
-        "Focused on getting SMEs started quickly"
-      ]
-    },
-    {
-      name: "First standard",
-      price: pricing.firstStandardMonthly,
-      description: siteConfig.pricing.firstStandardDetails,
-      features: [
-        "Controlled documents and records",
-        "Actions, audits, risks, reviews, and registers",
-        "Roles, permissions, notifications, and dashboards"
-      ]
-    },
-    {
-      name: "Additional standards",
-      price: pricing.additionalStandardMonthly,
-      description: siteConfig.pricing.additionalStandardDetails,
-      features: [
-        "Run multiple standards in one account",
-        "Build an integrated management system",
-        "Add standards as your requirements grow"
-      ]
-    },
-    {
-      name: "Extra seats",
-      price: pricing.extraSeatMonthly,
-      description: siteConfig.pricing.extraSeatDetails,
-      features: [
-        "Add seats as your team grows",
-        "Suitable for owners, managers, consultants, and representatives",
-        "Talk to us if you need help deciding fit"
-      ]
-    }
-  ];
 
   return (
     <Container className="space-y-16">
@@ -64,33 +22,9 @@ export default function PricingPage() {
           Start with a 30-day free trial, then choose the standards you need. Your first standard
           includes up to five users.
         </p>
-        <p className="text-sm font-medium text-slate">{pricing.currencyNotice}</p>
       </section>
 
-      <section className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-        {tiers.map((tier) => (
-          <div key={tier.name} className="card flex h-full flex-col">
-            <div className="space-y-3">
-              <p className="text-xs font-semibold uppercase tracking-[0.25em] text-slate">
-                {tier.name}
-              </p>
-              <p className="text-3xl font-semibold text-ink">{tier.price}</p>
-              <p className="text-sm text-slate">{tier.description}</p>
-            </div>
-            <ul className="mt-6 space-y-2 text-sm text-slate">
-              {tier.features.map((feature) => (
-                <li key={feature}>{feature}</li>
-              ))}
-            </ul>
-            <a
-              href={siteConfig.signupUrl}
-              className="mt-8 inline-flex items-center justify-center rounded-full bg-ink px-6 py-3 text-sm font-semibold text-white shadow-glow transition hover:-translate-y-0.5"
-            >
-              Start 30-day free trial
-            </a>
-          </div>
-        ))}
-      </section>
+      <RegionalPriceCards initialCountry={countryCode} countries={billingCountries} />
 
       <TalkToEugene />
 
