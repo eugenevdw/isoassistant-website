@@ -13,18 +13,26 @@ export default function LoginPage() {
           The ISO Assistant application is hosted separately. Use the secure login portal to
           access your workspace.
         </p>
-        <a
-          href="https://app.isoassistant.com"
-          className="inline-flex items-center justify-center rounded-full bg-ink px-6 py-3 text-sm font-semibold text-white shadow-glow transition hover:-translate-y-0.5"
-        >
-          Go to app login
-        </a>
-        <a href={siteConfig.signupUrl} className="text-sm font-semibold text-ink">
-          New here? Start a 30-day free trial
-        </a>
-        <Link href="/contact" className="text-sm font-semibold text-ink">
-          Need help deciding fit? Contact us
-        </Link>
+        <div className="flex flex-col items-start gap-x-6 gap-y-3 sm:flex-row sm:flex-wrap sm:items-center">
+          <a
+            href={siteConfig.appUrl}
+            className="inline-flex min-h-11 items-center justify-center rounded-full bg-ink px-6 py-3 text-sm font-semibold text-white shadow-glow transition hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink"
+          >
+            Go to app login
+          </a>
+          <a
+            href={siteConfig.signupUrl}
+            className="inline-flex min-h-11 items-center text-sm font-semibold text-ink underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink"
+          >
+            New here? Start a 30-day free trial
+          </a>
+          <Link
+            href="/contact"
+            className="inline-flex min-h-11 items-center text-sm font-semibold text-ink underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink"
+          >
+            Need help deciding fit? Contact us
+          </Link>
+        </div>
       </section>
     </Container>
   );
