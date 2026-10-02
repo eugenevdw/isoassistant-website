@@ -1,3 +1,4 @@
+import { RequestDemoLink } from "./components/RequestDemoLink";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { FAQSection } from "./components/sections/FAQSection";
@@ -97,16 +98,17 @@ export default function HomePage() {
               >
                 Start 30-day free trial
               </a>
+              <RequestDemoLink location="home_hero" />
               <Link
                 href="#modules"
-                className="rounded-full border border-ink/10 bg-white px-6 py-3 text-sm font-semibold text-ink transition hover:-translate-y-0.5"
+                className="inline-flex min-h-11 items-center text-sm font-semibold text-ink underline underline-offset-4"
               >
                 See modules
               </Link>
             </div>
             <p className="text-sm text-slate">
-              Built for SMEs that need practical ISO compliance software without running the system
-              from spreadsheets.
+              Explore on your own with a free trial, or let us walk you through it.
+              No account needed for a demo.
             </p>
             <TalkToEugene />
           </div>
@@ -255,8 +257,7 @@ export default function HomePage() {
               Ready to move ISO records out of spreadsheets?
             </h2>
             <p className="mt-2 text-sm text-slate">
-              Start the 30-day trial to see how ISO Assistant handles the daily work
-              behind an ISO management system.
+              Explore the daily ISO work with a 30-day trial, or request a guided demo for your business.
             </p>
           </div>
           <div className="flex flex-wrap gap-4">
@@ -266,9 +267,10 @@ export default function HomePage() {
             >
               Start 30-day free trial
             </a>
+            <RequestDemoLink location="home_bottom" />
             <Link
               href="/pricing"
-              className="rounded-full border border-ink/10 bg-white px-6 py-3 text-sm font-semibold text-ink transition hover:-translate-y-0.5"
+              className="inline-flex min-h-11 items-center text-sm font-semibold text-ink underline underline-offset-4"
             >
               View pricing
             </Link>

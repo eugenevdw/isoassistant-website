@@ -1,3 +1,4 @@
+import { RequestDemoLink } from "../components/RequestDemoLink";
 import Link from "next/link";
 import { Container } from "../components/layout/Container";
 import { siteConfig } from "../lib/site";
@@ -26,6 +27,7 @@ export default function LoginPage() {
           >
             New here? Start a 30-day free trial
           </a>
+          <RequestDemoLink location="login" className="inline-flex min-h-11 items-center text-sm font-semibold text-ink underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink" />
           <Link
             href="/contact"
             className="inline-flex min-h-11 items-center text-sm font-semibold text-ink underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink"

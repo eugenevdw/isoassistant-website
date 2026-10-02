@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { seoLandingPages } from "./lib/seoLandingPages";
 
-const staticPaths = ["", "/features", "/pricing", "/faq", "/contact"];
+const staticPaths = ["", "/features", "/pricing", "/faq", "/contact", "/request-demo"];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();

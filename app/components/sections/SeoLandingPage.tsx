@@ -1,3 +1,4 @@
+import { RequestDemoLink } from "../RequestDemoLink";
 import Link from "next/link";
 import { ProductScreenshot } from "../ProductScreenshot";
 import { Container } from "../layout/Container";
@@ -36,7 +37,7 @@ const sharedModuleLinks = [
   { href: "/features", label: "document control and work instructions" },
   { href: "/features", label: "incidents and NCRs" },
   { href: "/features", label: "risks, training, calibration and maintenance" },
-  { href: "/contact", label: "demo or trial enquiry" }
+  { href: "/request-demo", label: "request a guided demo" }
 ];
 
 export function SeoLandingPage({ page }: SeoLandingPageProps) {
@@ -57,9 +58,10 @@ export function SeoLandingPage({ page }: SeoLandingPageProps) {
           >
             Start 30-day free trial
           </a>
+          <RequestDemoLink location="standard_hero" />
           <Link
             href={page.showDemo ? "#product-demo" : "/pricing"}
-            className="rounded-full border border-ink/10 bg-white px-6 py-3 text-sm font-semibold text-ink transition hover:-translate-y-0.5"
+            className="inline-flex min-h-11 items-center text-sm font-semibold text-ink underline underline-offset-4"
           >
             {page.showDemo ? "Watch the demo" : "View pricing"}
           </Link>
@@ -171,13 +173,14 @@ export function SeoLandingPage({ page }: SeoLandingPageProps) {
         </div>
       </section>
 
-      {page.showDemo ? (
-        <section className="card space-y-5 text-center" aria-labelledby="trial-heading">
-          <h2 id="trial-heading" className="text-3xl font-semibold text-ink">Try it with your own team and records</h2>
-          <p className="mx-auto max-w-2xl text-slate">Start your 30-day free trial. Choose your standards, invite a colleague and try the workflow that matters most to your business.</p>
+      <section className="card space-y-5 text-center" aria-labelledby="trial-heading">
+        <h2 id="trial-heading" className="text-3xl font-semibold text-ink">Explore it yourself or get a guided walkthrough</h2>
+        <p className="mx-auto max-w-2xl text-slate">Start your 30-day free trial, or request a demo to see the workflows that matter most to your business. No account needed for a demo.</p>
+        <div className="flex flex-wrap justify-center gap-4">
           <a href={siteConfig.signupUrl} data-cta-location="standard_bottom" className="inline-block rounded-full bg-ink px-6 py-3 text-sm font-semibold text-white shadow-glow transition hover:-translate-y-0.5">Start your 30-day free trial</a>
-        </section>
-      ) : null}
+          <RequestDemoLink location="standard_bottom" />
+        </div>
+      </section>
     </Container>
   );
 }

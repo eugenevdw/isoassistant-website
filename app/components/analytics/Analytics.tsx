@@ -106,8 +106,10 @@ export function Analytics() {
 
     const handleClick = (event: MouseEvent) => {
       const target = event.target instanceof Element ? event.target.closest("a") : null;
-      if (!target || !target.href.startsWith("https://app.isoassistant.com/app/signup")) return;
-      trackAnalyticsEvent("trial_cta_click", {
+      if (!target) return;
+      const isDemo = target.dataset.ctaKind === "demo";
+      if (!isDemo && !target.href.startsWith("https://app.isoassistant.com/app/signup")) return;
+      trackAnalyticsEvent(isDemo ? "demo_cta_click" : "trial_cta_click", {
         cta_text: (target.textContent || "Start trial").trim().slice(0, 100),
         cta_location: target.dataset.ctaLocation || "page",
         page_path: window.location.pathname,

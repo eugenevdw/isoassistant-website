@@ -1,4 +1,5 @@
-import Link from "next/link";
+import { RequestDemoLink } from "../components/RequestDemoLink";
+import { siteConfig } from "../lib/site";
 import { Container } from "../components/layout/Container";
 
 export const dynamic = "force-static";
@@ -23,6 +24,10 @@ const faqs = [
     question: "How does the free trial work?",
     answer:
       "ISO Assistant offers a 30-day free trial. Only your email address is required to sign up."
+  },
+  {
+    question: "Can I see a demo without signing up for a trial?",
+    answer: "Yes. Request a guided demo with us to see the workflows that matter to your business and ask questions. You do not need to create an account or start a trial."
   },
   {
     question: "What does pricing look like after the trial?",
@@ -71,12 +76,15 @@ export default function FAQPage() {
             We can walk through your current ISO workflows and show a tailored demo.
           </p>
         </div>
-        <Link
-          href="/contact"
-          className="rounded-full bg-ink px-6 py-3 text-sm font-semibold text-white shadow-glow transition hover:-translate-y-0.5"
-        >
-          Start free trial
-        </Link>
+        <div className="flex flex-wrap gap-4">
+          <a
+            href={siteConfig.signupUrl}
+            className="rounded-full bg-ink px-6 py-3 text-sm font-semibold text-white shadow-glow transition hover:-translate-y-0.5"
+          >
+            Start free trial
+          </a>
+          <RequestDemoLink location="faq_bottom" />
+        </div>
       </section>
     </Container>
   );

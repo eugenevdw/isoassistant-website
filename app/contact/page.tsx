@@ -1,3 +1,4 @@
+import { RequestDemoLink } from "../components/RequestDemoLink";
 import Link from "next/link";
 import { ContactForm } from "./ContactForm";
 import { Container } from "../components/layout/Container";
@@ -17,10 +18,10 @@ export default function ContactPage() {
       <section className="space-y-5">
         <span className="tag">Contact</span>
         <h1 className="text-4xl font-semibold tracking-tight text-ink md:text-5xl">
-          Start your free trial or send us a question.
+          Request a demo, start a trial or ask a question.
         </h1>
         <p className="max-w-2xl text-lg text-slate">
-          Start the 30-day free trial online, or use the contact form if you want to ask about
+          Request a guided walkthrough, start the 30-day free trial online, or ask about
           pricing, standards support, or whether ISO Assistant is the right fit for your business.
         </p>
       </section>
@@ -34,6 +35,11 @@ export default function ContactPage() {
           <ContactForm />
         </div>
         <div className="space-y-6">
+          <div className="card space-y-4">
+            <h2 className="text-2xl font-semibold text-ink">Prefer a guided walkthrough?</h2>
+            <p className="text-sm text-slate">See the workflows that matter to your business with us. No account or trial signup required.</p>
+            <RequestDemoLink location="contact" />
+          </div>
           <div className="card space-y-4">
             <h2 className="text-2xl font-semibold text-ink">Start online</h2>
             <p className="text-sm text-slate">

@@ -1,3 +1,4 @@
+import { RequestDemoLink } from "../RequestDemoLink";
 import Link from "next/link";
 import { Container } from "./Container";
 import { siteConfig } from "../../lib/site";
@@ -49,6 +50,7 @@ export function Footer() {
           <a href={siteConfig.signupUrl} className="block transition hover:text-ink">
             Start free trial
           </a>
+          <RequestDemoLink location="footer" className="block transition hover:text-ink" />
           <Link href="/contact" className="block transition hover:text-ink">
             Contact us
           </Link>

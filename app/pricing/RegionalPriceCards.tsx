@@ -1,5 +1,6 @@
 "use client";
 
+import { RequestDemoLink } from "../components/RequestDemoLink";
 import { useEffect, useRef, useState } from "react";
 import { siteConfig } from "../lib/site";
 
@@ -93,5 +94,8 @@ export function RegionalPriceCards({ initialCountry, countries }: { initialCount
 }
 
 function Signup() {
-  return <a href={siteConfig.signupUrl} className="mt-auto inline-flex justify-center rounded-full bg-ink px-6 py-3 text-sm font-semibold text-white">Start 30-day free trial</a>;
+  return <div className="mt-auto flex flex-col gap-3">
+    <a href={siteConfig.signupUrl} className="inline-flex justify-center rounded-full bg-ink px-6 py-3 text-sm font-semibold text-white">Start 30-day free trial</a>
+    <RequestDemoLink location="pricing_card" />
+  </div>;
 }

@@ -8,18 +8,29 @@ type ContactPayload = {
   company?: string;
   message?: string;
   website?: string;
+  intent?: "enquiry" | "demo";
 };
 
 function isValidEmail(value: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 }
 
-function clean(value: string | undefined) {
-  return value?.trim() ?? "";
+function clean(value: unknown) {
+  return typeof value === "string" ? value.trim() : "";
 }
 
 export async function POST(request: Request) {
-  const payload = (await request.json()) as ContactPayload;
+  let payload: ContactPayload;
+  try {
+    const parsed = await request.json();
+    if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) {
+      return NextResponse.json({ error: "Please submit a valid request." }, { status: 400 });
+    }
+    payload = parsed;
+  } catch {
+    return NextResponse.json({ error: "Please submit a valid request." }, { status: 400 });
+  }
+  const isDemo = payload.intent === "demo";
 
   const name = clean(payload.name);
   const email = clean(payload.email);
@@ -31,9 +42,9 @@ export async function POST(request: Request) {
     return NextResponse.json({ ok: true });
   }
 
-  if (!name || !email || !message) {
+  if (!name || !email || (!isDemo && !message)) {
     return NextResponse.json(
-      { error: "Please complete your name, email address, and message." },
+      { error: isDemo ? "Please complete your name and email address." : "Please complete your name, email address, and message." },
       { status: 400 }
     );
   }
@@ -53,43 +64,46 @@ export async function POST(request: Request) {
     return NextResponse.json(
       {
         error:
-          "The contact form is not configured yet. Set RESEND_API_KEY and CONTACT_FORM_FROM."
+          `We could not send your request right now. Please email ${siteConfig.email} or call ${siteConfig.phoneDisplay}.`
       },
       { status: 500 }
     );
   }
 
   const resend = new Resend(apiKey);
-  const subject = company
-    ? `ISO Assistant website enquiry from ${company}`
-    : `ISO Assistant website enquiry from ${name}`;
+  const subject = `ISO Assistant ${isDemo ? "demo request" : "website enquiry"} from ${company || name}`;
 
   const text = [
+    `Request type: ${isDemo ? "Guided demo" : "General enquiry"}`,
     `Name: ${name}`,
     `Email: ${email}`,
     `Company: ${company || "Not provided"}`,
     "",
     "Message:",
-    message
+    message || "Please contact me to arrange a guided demo."
   ].join("\n");
 
-  const { error } = await resend.emails.send({
-    from,
-    to,
-    replyTo: email,
-    subject,
-    text
-  });
+  try {
+    const { error } = await resend.emails.send({
+      from,
+      to,
+      replyTo: email,
+      subject,
+      text
+    });
 
-  if (error) {
-    return NextResponse.json(
-      { error: "We could not send your message right now. Please try again." },
-      { status: 500 }
-    );
+    if (error) {
+      return NextResponse.json(
+        { error: "We could not send your message right now. Please try again." },
+        { status: 500 }
+      );
+    }
+
+    return NextResponse.json({
+      ok: true,
+      message: isDemo ? "Thanks. Your demo request has been sent. We’ll get in touch to arrange a suitable time." : "Thanks. Your message has been sent."
+    });
+  } catch {
+    return NextResponse.json({ error: "We could not send your request right now. Please try again." }, { status: 500 });
   }
-
-  return NextResponse.json({
-    ok: true,
-    message: "Thanks. Your message has been sent."
-  });
 }

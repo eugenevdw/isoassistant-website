@@ -2,6 +2,7 @@
 
 import { useRef, useState } from "react";
 import { siteConfig } from "../../lib/site";
+import { RequestDemoLink } from "../RequestDemoLink";
 
 export function ProductDemo() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -9,7 +10,7 @@ export function ProductDemo() {
 
   function finishDemo() {
     setEnded(true);
-    // Native fullscreen shows only the video, not the HTML signup link.
+    // Native fullscreen shows only the video, not the HTML action links.
     // Return to the page at the end so the clickable end card is visible.
     if (document.fullscreenElement === videoRef.current) {
       void document.exitFullscreen().catch(() => {});
@@ -34,7 +35,7 @@ export function ProductDemo() {
 
   return (
     <>
-      <div className={`relative aspect-video w-full min-w-0 max-w-full bg-ink ${ended ? "min-h-48" : ""}`}>
+      <div className={`relative aspect-video w-full min-w-0 max-w-full bg-ink ${ended ? "min-h-64 sm:min-h-48" : ""}`}>
         <video
           ref={videoRef}
           aria-label="ISO Assistant product demo video"
@@ -51,20 +52,23 @@ export function ProductDemo() {
           }}
         >
           <source src="/videos/iso-assistant-demo-20260905.mp4" type="video/mp4" />
-          Your browser does not support embedded video. You can still start your free trial below.
+          Your browser does not support embedded video. You can start a free trial or request a guided demo below.
         </video>
         {ended ? (
           <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-ink px-4 text-center text-white sm:gap-4">
             <p role="status" className="text-lg font-semibold sm:text-2xl">
-              See how it works with your team.
+              Explore it yourself or let us walk you through it.
             </p>
-            <a
-              href={siteConfig.signupUrl}
-              data-cta-location="demo_end_card"
-              className="rounded-full bg-lime px-5 py-3 text-sm font-semibold text-ink transition hover:brightness-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
-            >
-              Start your 30-day free trial
-            </a>
+            <div className="flex flex-wrap justify-center gap-2">
+              <a
+                href={siteConfig.signupUrl}
+                data-cta-location="demo_end_card"
+                className="rounded-full bg-lime px-5 py-3 text-sm font-semibold text-ink transition hover:brightness-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+              >
+                Start your 30-day free trial
+              </a>
+              <RequestDemoLink location="demo_end_card" className="inline-flex min-h-11 items-center justify-center rounded-full border border-white/50 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white" />
+            </div>
             <button
               type="button"
               onClick={replay}
@@ -77,13 +81,16 @@ export function ProductDemo() {
       </div>
       <div className="flex flex-wrap items-center justify-between gap-3 border-b border-ink/10 px-5 py-4">
         <p className="text-sm text-slate">1:49 demo · Captions included</p>
-        <a
-          href={siteConfig.signupUrl}
-          data-cta-location="demo_below_video"
-          className="rounded-full bg-ink px-5 py-3 text-sm font-semibold text-white transition hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink"
-        >
-          Start your 30-day free trial
-        </a>
+        <div className="flex flex-wrap gap-3">
+          <a
+            href={siteConfig.signupUrl}
+            data-cta-location="demo_below_video"
+            className="rounded-full bg-ink px-5 py-3 text-sm font-semibold text-white transition hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink"
+          >
+            Start your 30-day free trial
+          </a>
+          <RequestDemoLink location="demo_below_video" />
+        </div>
       </div>
     </>
   );

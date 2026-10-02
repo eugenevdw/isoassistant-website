@@ -1,3 +1,4 @@
+import { RequestDemoLink } from "../components/RequestDemoLink";
 import Link from "next/link";
 import { Container } from "../components/layout/Container";
 import { ProductScreenshot } from "../components/ProductScreenshot";
@@ -167,9 +168,10 @@ export default function FeaturesPage() {
           >
             Start 30-day free trial
           </a>
+          <RequestDemoLink location="features_hero" />
           <Link
             href="/pricing"
-            className="rounded-full border border-ink/10 bg-white px-6 py-3 text-sm font-semibold text-ink transition hover:-translate-y-0.5"
+            className="inline-flex min-h-11 items-center text-sm font-semibold text-ink underline underline-offset-4"
           >
             View pricing
           </Link>

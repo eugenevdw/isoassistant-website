@@ -1,3 +1,4 @@
+import { RequestDemoLink } from "../components/RequestDemoLink";
 import Link from "next/link";
 import { headers } from "next/headers";
 import { Container } from "../components/layout/Container";
@@ -36,12 +37,15 @@ export default function PricingPage() {
             standard requirements.
           </p>
         </div>
-        <Link
-          href="/contact"
-          className="rounded-full border border-ink/10 bg-white px-6 py-3 text-sm font-semibold text-ink transition hover:-translate-y-0.5"
-        >
-          Contact us
-        </Link>
+        <div className="flex flex-wrap items-center gap-4">
+          <RequestDemoLink location="pricing_bottom" />
+          <Link
+            href="/contact"
+            className="rounded-full border border-ink/10 bg-white px-6 py-3 text-sm font-semibold text-ink transition hover:-translate-y-0.5"
+          >
+            Contact us
+          </Link>
+        </div>
       </section>
     </Container>
   );
